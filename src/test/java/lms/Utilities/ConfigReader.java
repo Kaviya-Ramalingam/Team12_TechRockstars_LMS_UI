@@ -35,8 +35,13 @@ public class ConfigReader {
 		 return password;
 	  }
 	  
-	  public static String role() {
+	  public static String getrole() {
 		  String role =prop.getProperty("role");
 		  return role;
+	  }
+	  
+	  public static String getExcelPath() {
+		  String ExcelPath = prop.getProperty("ExcelPath");
+		return ExcelPath;
 	  }
 }

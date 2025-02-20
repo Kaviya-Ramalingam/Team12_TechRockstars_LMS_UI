@@ -26,10 +26,13 @@ public class Login_StepDefinition {
 	}
 
 	@When("Admin gives the correct lms portal url")
-	public void admin_gives_the_correct_lms_portal_url() {
+	public void admin_gives_the_correct_lms_portal_url() throws InterruptedException {
 		String username = ConfigReader.getUsername();
 		String password = ConfigReader.getpassword();
+		String role = ConfigReader.getrole();
 	    loginpage.entervalidCredentials(username, password);
+	    loginpage.selectRole();
+	    loginpage.selectAdmin(role);
 	    loginpage.loginClick();
 	}
 
