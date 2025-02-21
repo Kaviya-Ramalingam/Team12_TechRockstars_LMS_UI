@@ -35,7 +35,7 @@ public class LoginPage {
 	WebElement loginPageTitle;
 	@FindBy(xpath = "//div[@class='message__title']")
 	WebElement errorPageTitle;
-	@FindBy(xpath = "//p[normalize-space()='Please login to LMS application']")
+	@FindBy(xpath = "//p")
 	WebElement LMSApplication;
 	@FindBy(xpath = "")
 	WebElement companyName;
@@ -43,7 +43,7 @@ public class LoginPage {
 	WebElement user;
 	@FindBy(xpath = "//div[@class='mat-select-arrow ng-tns-c161-11']")
 	WebElement dropdownElement;
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//label[@id='mat-form-field-label-3']/span[1]")
 	WebElement loginPassword;
 	@FindBy(xpath = "//span[text()='Select the role']")
 	WebElement selectRole;
@@ -108,6 +108,7 @@ public class LoginPage {
 	public void getInvalidUrl() {
 		String invalidUrl = "https://feb-ui-hon-bbfd38d67ea9.herokuapp.com/";
 		driver.get(invalidUrl);
+		String s1=driver.getTitle();
 
 	}
 
