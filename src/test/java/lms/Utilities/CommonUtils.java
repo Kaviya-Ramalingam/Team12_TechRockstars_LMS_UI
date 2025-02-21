@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CommonUtils {
 	
-	public WebDriver driver;
+public WebDriver driver;
 	
 	
 	public CommonUtils(WebDriver driver) {
@@ -56,8 +56,6 @@ public class CommonUtils {
 		}
 		return flag;
 	}
-
-
 
 
 
