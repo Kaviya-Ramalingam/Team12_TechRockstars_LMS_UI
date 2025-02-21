@@ -1,6 +1,7 @@
 package lms.Utilities;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -35,8 +36,9 @@ public class ConfigReader {
 		 return password;
 	  }
 	  
-	  public static String role() {
+	  public static String getrole() {
 		  String role =prop.getProperty("role");
 		  return role;
 	  }
-}
+	}
+
