@@ -1,5 +1,6 @@
 package lms.StepDefinitions;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -10,6 +11,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lms.PageObjects.ProgramPage;
+import lms.Utilities.CommonUtils;
+import lms.Utilities.ConfigReader;
 import lms.Utilities.ExcelData;
 import lms.Utilities.LoggerLoad;
 import lms.Utilities.TestContextSetup;
@@ -25,6 +28,8 @@ public class AddNewProgram_StepDefinition {
 		programPage = testcontextsetup.pageobjectmanager.getProgramPage();
 
 	}
+
+	String progrName;
 
 	@Given("Admin is on Program page")
 	public void admin_is_on_program_page() {
@@ -99,17 +104,20 @@ public class AddNewProgram_StepDefinition {
 		programPage.typeProgranDetailsInput(ExcelData.programName, ExcelData.programDescription);
 		LoggerLoad.info("Program details added:" + "ProgramName: " + ExcelData.programName + "Description: "
 				+ ExcelData.programDescription);
+
 		programPage.clickActiveRadioBtn();
 		programPage.clickSaveButton();
 
 	}
 
 	@Then("Admin gets message {string}")
-	public void admin_gets_message(String expectedMesg) {
+	public void admin_gets_message(String expectedMesg) throws IOException {
 
 		// Assert.assertEquals(programPage.getSuccessMesg(), expectedMesg);
 
 		if (expectedMesg.equals("Program Created Successfully")) {
+			ConfigReader.setProperty("program.name", ExcelData.programName);
+			ConfigReader.setProperty("program.description", ExcelData.programDescription);
 			Assert.assertEquals(programPage.getSuccessMesg(), expectedMesg);
 		} else if (expectedMesg.equals("programName must contain only letters and hyphens")) {
 			Assert.assertEquals("Program name error message does not match!", expectedMesg,
@@ -118,7 +126,83 @@ public class AddNewProgram_StepDefinition {
 		}
 
 	}
+
+	@When("Admin searches with newly created program name")
+	public void admin_searches_with_newly_created_program_name() throws Exception {
+
+		String progrName = ConfigReader.getProperty("program.name");
+		programPage.SearchByProgramName(progrName);
+
+	}
+
+	@Then("Records of the newly created program name is displayed and match the data entered")
+	public void records_of_the_newly_created_program_name_is_displayed_and_match_the_data_entered() {
+		String actualProgName = programPage.getTableValue(progrName);
+		// Assert.assertEquals(programPage.getSelectedProgram(), progrName);
+		Assert.assertTrue(actualProgName.contains(progrName));
+	}
+
+	@When("Admin Click on cancel button")
+	public void admin_click_on_cancel_button() {
+		programPage.clickCancelButton();
+	}
+
+	@Then("Admin can see program details form disappear")
+	public void admin_can_see_program_details_form_disappear() {
+
+		Assert.assertFalse(programPage.programDetailsPopup());
+	}
+
+	@When("Admin enters the Name in the text box")
+	public void admin_enters_the_name_in_the_text_box() {
+		progrName = ConfigReader.getProperty("program.name");
+		programPage.progInputField(progrName);
+	}
+
+	@Then("Admin can see the text entered")
+	public void admin_can_see_the_text_entered() {
+		String enteredText = programPage.programNameInputField.getAttribute("value");
+
+		String expectedText = ConfigReader.getProperty("program.name");
+
+		Assert.assertTrue(enteredText.contains(expectedText),
+				"The entered text does not match the expected program name.");
+	}
+
+	@When("Admin enters the Description in text box")
+	public void admin_enters_the_description_in_text_box() {
+		String progrdesc = ConfigReader.getProperty("program.description");
+		programPage.progdescField(progrdesc);
+	}
+
+	@Then("Admin can see the text entered in description box")
+	public void admin_can_see_the_text_entered_in_description_box() {
+		String entered = programPage.programDescriptionInputField.getAttribute("value");
+
+		String expected = ConfigReader.getProperty("program.description");
+
+		Assert.assertTrue(entered.contains(expected), "The entered text does not match the expected program name.");
+	}
+
+	@When("Admin selects the status of the program by clicking on the radio button {string}")
+	public void admin_selects_the_status_of_the_program_by_clicking_on_the_radio_button(String string) {
+		programPage.clickActiveRadioBtn();
+	}
+
+	@Then("Admin can see {string} status selected")
+	public void admin_can_see_status_selected(String string) {
+		Assert.assertTrue(programPage.activeRadioBtnSelected(), "Active status radio button should be selected.");
+	}
+
+	@When("Admin Click on {string} button")
+	public void admin_click_on_button(String string) {
+		programPage.clickX();
+	}
+
+
+
 }
+
 	
 
 
