@@ -15,7 +15,6 @@ import lms.Utilities.LoggerLoad;
 
 
 public class DriverFactory {
-	
 	public static ThreadLocal<WebDriver> thdriver = new ThreadLocal<>();
 	public static String browser = ConfigReader.getBrowser();
 	public static String baseUrl = ConfigReader.getUrl();
@@ -24,8 +23,8 @@ public class DriverFactory {
 		
 		if(browser.equalsIgnoreCase("chrome")) {
 			ChromeOptions co = new ChromeOptions();
-			co.addArguments("--remote-allow-origins=*");
-			co.addArguments("--headless");
+			//co.addArguments("--remote-allow-origins=*");
+			co.addArguments("headless");
 			thdriver.set(new ChromeDriver());
 		}
 		else if (browser.equalsIgnoreCase("firefox")) {
