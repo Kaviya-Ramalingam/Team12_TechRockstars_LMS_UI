@@ -5,14 +5,12 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-
-
 
 public class CommonUtils {
 
@@ -25,7 +23,9 @@ public class CommonUtils {
 	public static void moveToElementAndClick(WebDriver driver, WebElement element) {
 		try {
 			Actions action = new Actions(driver);
-			action.moveToElement(element).click().perform();
+
+			Actions cuurentAction = action.moveToElement(element);
+			cuurentAction.click().perform();
 		} catch (Exception e) {
 			LoggerLoad.error("The element:" + element.toString() + "is not able to scroll to element . Exception is:"
 					+ e.getMessage());
@@ -95,33 +95,33 @@ public class CommonUtils {
 		}
 		return webElement;
 	}
-	
+
 	public static boolean waitForElementStaleness(WebDriver driver, WebElement element, long durationInSeconds) {
-	    boolean isStale = false;
-	    try {
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(durationInSeconds));
-	        wait.until(ExpectedConditions.stalenessOf(element));  // Wait until element becomes stale
-	        isStale = true;  
-	    } catch (Exception e) {
-	        LoggerLoad.error("waitForElementStaleness()::The element " + element.toString()
-	                + " did not become stale. Exception is: " + e.getMessage());
-	    }
-	    return isStale;
+		boolean isStale = false;
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(durationInSeconds));
+			wait.until(ExpectedConditions.stalenessOf(element)); // Wait until element becomes stale
+			isStale = true;
+		} catch (Exception e) {
+			LoggerLoad.error("waitForElementStaleness()::The element " + element.toString()
+					+ " did not become stale. Exception is: " + e.getMessage());
+		}
+		return isStale;
 	}
-	
-	
-	
+
 	public static List<String> sortAscendingOrder(List<WebElement> list) {
-		return list.stream().map(s -> s.getText().trim()).sorted(String.CASE_INSENSITIVE_ORDER).collect(Collectors.toList());
+		return list.stream().map(s -> s.getText().trim().toLowerCase()).sorted(String.CASE_INSENSITIVE_ORDER)
+				.collect(Collectors.toList());
 	}
 
-	
 	public static List<String> sortDescendingOrder(List<WebElement> list) {
-		return list.stream().map(WebElement::getText).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+		return list.stream().map(s -> s.getText().trim().toLowerCase()).sorted(Comparator.reverseOrder())
+				.collect(Collectors.toList());
 	}
 
-	public static List<WebElement> waitForElementsVisibility(WebDriver driver, List<WebElement> elememt, long durationInSeconds) {
-		
+	public static List<WebElement> waitForElementsVisibility(WebDriver driver, List<WebElement> elememt,
+			long durationInSeconds) {
+
 		List<WebElement> webElement = null;
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(durationInSeconds));
@@ -132,7 +132,15 @@ public class CommonUtils {
 		}
 		return webElement;
 	}
-	
-	
+
+	public static void clickElementUsingJS(WebDriver driver, WebElement element) {
+		try {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", element);
+			LoggerLoad.info("Click performed using JavaScript.");
+		} catch (Exception e) {
+			LoggerLoad.error("Failed to click element using JavaScript. Exception is: " + e.getMessage());
+		}
+	}
 
 }

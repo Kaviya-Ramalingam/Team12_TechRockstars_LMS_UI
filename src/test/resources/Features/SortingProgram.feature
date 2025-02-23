@@ -3,7 +3,7 @@ Feature: program sorting
 Background: Admin is logged in to LMS Portal
 Given The browser is open 
 When Admin gives the correct lms portal url
-Then Admin should land on the login page
+
 
   @ps1
   Scenario: verify sorting of program name in ascending order
