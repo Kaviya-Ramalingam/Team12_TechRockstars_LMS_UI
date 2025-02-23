@@ -23,9 +23,7 @@ public class CommonUtils {
 	public static void moveToElementAndClick(WebDriver driver, WebElement element) {
 		try {
 			Actions action = new Actions(driver);
-
-			Actions cuurentAction = action.moveToElement(element);
-			cuurentAction.click().perform();
+			action.moveToElement(element).click().perform();
 		} catch (Exception e) {
 			LoggerLoad.error("The element:" + element.toString() + "is not able to scroll to element . Exception is:"
 					+ e.getMessage());
