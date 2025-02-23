@@ -1,5 +1,5 @@
 @HomePage
-Feature: Login Page Validation
+Feature: Home Page Validation
 
   Background: Admin gives the correct LMS portal URL
    Given Admin is on login Page 
@@ -7,17 +7,17 @@ Feature: Login Page Validation
    
 @validHomePage
    Scenario: Verify LMS title
-   Then Admin should see LMS -Learning management system as title 
+   Then Admin should see LMS - Learning Management System as title 
    
    Scenario: Verify LMS title alignment
    Then LMS title should be on the top left corner of page
-
+   
    Scenario: Validate navigation bar text
    Then Admin should see correct spelling in navigation bar text
    
    Scenario: Validate LMS title has correct spelling and space
    Then Admin should see correct spelling and space in LMS title
-
+   
    Scenario: Validate alignment for navigation bar
    Then Admin should see the navigation bar text on the top right side
    
@@ -37,16 +37,16 @@ Feature: Login Page Validation
    Then Admin should see logout in the 5th place
    
    Scenario: verify pie-chart presence
-   Then Admin should see piechart
+   Then Admin should see pie chart
    
    Scenario: Verify user details
    Then Admin should see welcome message with user name and role
-  
+   
    Scenario: Verify bar chart
    Then Admin should see bar chart for Active and inactive user
     
    Scenario: Verify user count
-   Then Admin should see user count 
+   Then Admin should see user count
    
    Scenario: Verify staff count
    Then Admin should see staff count  
@@ -59,7 +59,7 @@ Feature: Login Page Validation
    
    Scenario: Verify staff table pagination
    Then Admin should see staff table with pagination icons
-   
+
    Scenario: Verify staff data page split
    Then Admin should see 5 staff data in a page
    
@@ -68,11 +68,6 @@ Feature: Login Page Validation
    
    Scenario: verify first page icon disabled
    Then Admin should see first page icon disabled
-   
-   
-   
-   
-   
    
    
    
