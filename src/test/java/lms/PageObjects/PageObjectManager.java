@@ -10,6 +10,7 @@ public class PageObjectManager {
 	public ProgramPage programPage;
 	public BatchPage bp;
 	public ClassPage classPage;
+	public HomePage homePage;
 
 
 	public PageObjectManager(WebDriver driver) {
@@ -19,6 +20,12 @@ public class PageObjectManager {
 	public LoginPage getLoginPage() {
 		loginPage = new LoginPage(driver);
 		return loginPage;
+	}
+	
+	public HomePage getHomePage() {
+		homePage = new HomePage(driver);
+		return homePage;
+		
 	}
 
 	public ProgramPage getProgramPage() {
