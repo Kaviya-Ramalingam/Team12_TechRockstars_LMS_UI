@@ -6,9 +6,11 @@ public class PageObjectManager {
 
 	public LoginPage loginPage;
 	public WebDriver driver;
+
 	public ProgramPage programPage;
 	public BatchPage bp;
 	public ClassPage classPage;
+
 
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
@@ -33,5 +35,7 @@ public class PageObjectManager {
 		classPage = new ClassPage(driver);
 		return classPage;
 	}
+
+	
 
 }
