@@ -19,12 +19,15 @@ public class DriverFactory {
 
 	public static WebDriver Initialization(String browser) {
 
-		if (browser.equalsIgnoreCase("chrome")) {
-			ChromeOptions option = new ChromeOptions();
-			// co.addArguments("--remote-allow-origins=*");
-			option.addArguments("headless");
-			thdriver.set(new ChromeDriver(option));
-		} else if (browser.equalsIgnoreCase("firefox")) {
+	
+		if(browser.equalsIgnoreCase("chrome")) {
+			ChromeOptions co = new ChromeOptions();
+			co.addArguments("--remote-allow-origins=*");
+			//co.addArguments("--headless");
+			thdriver.set(new ChromeDriver(co));
+		}
+		else if (browser.equalsIgnoreCase("firefox")) {
+
 			FirefoxOptions options = new FirefoxOptions();
 
 			options.addArguments("--headless");

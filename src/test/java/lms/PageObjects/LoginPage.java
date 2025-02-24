@@ -27,6 +27,7 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 
+
 	@FindBy(xpath = "//input[@id='username']")
 	WebElement username;
 	@FindBy(xpath = "//input[@id='password']")
@@ -74,6 +75,7 @@ public class LoginPage {
 	@FindBy(xpath = "//div[@class='box']")
 	WebElement dashboard;
 
+
 	public void entervalidCredentials(String validUserName, String ValidPassword) {
 		CommonUtils.sendInput(driver, username, validUserName);
 		CommonUtils.sendInput(driver, password, ValidPassword);
@@ -86,6 +88,7 @@ public class LoginPage {
 
 	public void loginClick() {
 		CommonUtils.moveToElementAndClick(driver, login);
+
 	}
 
 	public void selectAdmin(String VisibleText) {
@@ -93,7 +96,7 @@ public class LoginPage {
 
 	}
 
-//****************
+
 	public String getLoginPageTitleText() {
 	
 		return driver.getTitle();
@@ -246,5 +249,6 @@ public class LoginPage {
 		actions.sendKeys(username, value1).sendKeys(Keys.TAB).sendKeys(password, value2).sendKeys(Keys.TAB).click()
 				.sendKeys(role, value3).sendKeys(Keys.TAB).click().perform();
 	}
+
 
 }
