@@ -14,6 +14,7 @@ import lms.Utilities.LoggerLoad;
 
 
 
+
 public class DriverFactory {
 	
 	public static ThreadLocal<WebDriver> thdriver = new ThreadLocal<>();
@@ -42,6 +43,7 @@ public class DriverFactory {
 		getdriver().manage().window().maximize();
 		getdriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		return thdriver.get();
+		
 		
 	}
 	
