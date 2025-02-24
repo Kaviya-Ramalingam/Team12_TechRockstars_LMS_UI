@@ -11,6 +11,7 @@ import lms.Utilities.LoggerLoad;
 import lms.Utilities.TestContextSetup;
 
 public class Login_StepDefinition {
+
 	TestContextSetup testcontextsetup;
 	LoginPage loginpage;
 
@@ -29,6 +30,7 @@ public class Login_StepDefinition {
 	@Given("The browser is open")
 	public void the_browser_is_open() {
 		LoggerLoad.info("Admin opens the browser");
+
 	}
   
 	@Then("Admin should land on the login page")
@@ -51,6 +53,7 @@ public class Login_StepDefinition {
 	@Then("HTTP response >= {int}. Then the link is broken")
 	public void http_response_then_the_link_is_broken(Integer code) {
 		loginpage.verifyBrokenLink(code);
+
 	}
 
 	@Then("Admin should see correct spellings in all fields")
@@ -160,6 +163,16 @@ public class Login_StepDefinition {
 		String username = ConfigReader.getUsername();
 		String password = ConfigReader.getpassword();
 		String role = ConfigReader.getrole();
+
+		loginpage.entervalidCredentials(username, password);
+		loginpage.selectRole();
+		loginpage.selectAdmin(role);
+		loginpage.loginClick();
+	}
+
+	@Then("Admin should land on the login page")
+	public void admin_should_land_on_the_login_page() {
+
 	    loginpage.entervalidCredentials(username, password);
 	    loginpage.selectRole();
 	    loginpage.selectAdmin(role);
@@ -241,6 +254,7 @@ public class Login_StepDefinition {
 		loginpage.selectRole();
 		loginpage.selectAdmin(role);
 		loginpage.loginClick();
+
 
 	}
 
