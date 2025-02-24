@@ -18,13 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class CommonUtils {
-	
-public WebDriver driver;
-	
 
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-public class CommonUtils {
 
 	public WebDriver driver;
 
@@ -98,6 +92,16 @@ public class CommonUtils {
 	public static List<WebElement> waitForElementsVisibility(WebDriver driver, List<WebElement> elememt,
 			long durationInSeconds) {
 
+		List<WebElement> webElement = null;
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(durationInSeconds));
+			webElement = wait.until(ExpectedConditions.visibilityOfAllElements(elememt));
+		} catch (Exception e) {
+			LoggerLoad.error("waitForElementVisibility()::The element " + elememt.toString()
+					+ " may not be visible. Exception is: " + e.getMessage());
+		}
+		return webElement;
+	}
 
 	public static Boolean waitForElementInVisibility(WebDriver driver, WebElement element, long durationInSeconds) {
 
@@ -135,21 +139,6 @@ public class CommonUtils {
 				.collect(Collectors.toList());
 	}
 
-	public static List<WebElement> waitForElementsVisibility(WebDriver driver, List<WebElement> elememt,
-			long durationInSeconds) {
-
-
-		List<WebElement> webElement = null;
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(durationInSeconds));
-			webElement = wait.until(ExpectedConditions.visibilityOfAllElements(elememt));
-		} catch (Exception e) {
-			LoggerLoad.error("waitForElementVisibility()::The element " + elememt.toString()
-					+ " may not be visible. Exception is: " + e.getMessage());
-		}
-		return webElement;
-	}
-
 
 	public static void clickElementUsingJS(WebDriver driver, WebElement element) {
 		try {
@@ -173,7 +162,7 @@ public class CommonUtils {
 		try { Thread.sleep(time); } catch(Exception e) {e.printStackTrace(); }		
 	}
 
-	
+
 
 
 

@@ -39,7 +39,7 @@ public class Navigation_StepDefinition {
 		if (page.equals("program")) {
 			programPage.programClick();
 		} else if (page.equals("batch")) {
-			batchpage.batchClick();
+			batchpage.clickOnBatchLink();;
 		} else if (page.equals("class")) {
 			classpage.classClick();
 		} else {
@@ -54,7 +54,7 @@ public class Navigation_StepDefinition {
 		if (page.equals("program")) {
 			Assert.assertEquals(programPage.getProgramTitle(), "Manage Program");
 		} else if (page.equals("batch")) {
-			Assert.assertEquals(batchpage.getbatchTitle(), "Manage Batch");
+			Assert.assertEquals(batchpage.getManageBatchHeading(), "Manage Batch");
 		} else if (page.equals("class")) {
 			Assert.assertEquals(classpage.getClassTitle(), "Manage Class");
 		} else {

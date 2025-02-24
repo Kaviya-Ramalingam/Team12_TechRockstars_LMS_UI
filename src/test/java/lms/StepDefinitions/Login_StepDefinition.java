@@ -157,27 +157,6 @@ public class Login_StepDefinition {
 		loginpage.selectAdmin(role);
 		loginpage.loginClick();
 		System.out.println("**Login completed**");
-
-	@When("Admin gives the correct lms portal url")
-	public void admin_gives_the_correct_lms_portal_url() throws InterruptedException {
-		String username = ConfigReader.getUsername();
-		String password = ConfigReader.getpassword();
-		String role = ConfigReader.getrole();
-
-		loginpage.entervalidCredentials(username, password);
-		loginpage.selectRole();
-		loginpage.selectAdmin(role);
-		loginpage.loginClick();
-	}
-
-	@Then("Admin should land on the login page")
-	public void admin_should_land_on_the_login_page() {
-
-	    loginpage.entervalidCredentials(username, password);
-	    loginpage.selectRole();
-	    loginpage.selectAdmin(role);
-	    loginpage.loginClick();
-
 	}
 
 	@Then("Admin should land on home page")
