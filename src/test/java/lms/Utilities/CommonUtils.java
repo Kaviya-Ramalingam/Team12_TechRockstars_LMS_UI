@@ -153,4 +153,15 @@ public class CommonUtils {
 		try { Thread.sleep(time); } catch(Exception e) {e.printStackTrace(); }		
 	}
 
+	public static void clickElement(WebDriver driver, WebElement element) {
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", element);
+	}
+public static void waitForRefresh(long time) {
+		
+		try { Thread.sleep(time); } catch(Exception e) {e.printStackTrace(); }		
+	}
+
+
 }
