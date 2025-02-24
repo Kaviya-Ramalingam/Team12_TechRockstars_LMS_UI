@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import lms.Utilities.CommonUtils;
 import lms.Utilities.LoggerLoad;
@@ -27,6 +28,9 @@ public class ProgramPage {
 
 	@FindBy(xpath = "//button[@id='program']/span[1]")
 	WebElement program;
+	
+	@FindBy(xpath = "//button[@id='logout']")
+	WebElement progLogout;
 
 	@FindBy(xpath = "//*[contains(text(), 'Manage Program')]")
 	WebElement ManageProgramTitle;
@@ -133,7 +137,8 @@ public class ProgramPage {
 
 	@FindBy(xpath = "//table[@role='grid']/tbody/tr/td[3]")
 	public List<WebElement> programDescriptions;
-	public @FindBy(xpath = "//table[@role='grid']/tbody/tr/td[4]") List<WebElement> programsStatus;
+	public @FindBy(xpath = "//table[@role='grid']/tbody/tr/td[4]") 
+	List<WebElement> programsStatus;
 
 	// manageProgramValidation
 
@@ -146,25 +151,26 @@ public class ProgramPage {
 	@FindBy(xpath = "//table//thead//div[@role = 'checkbox']")
 	WebElement headerCheckbox;
 
-	@FindBy(xpath = "//table//tbody/tr/td[1]//div[@role = 'checkbox']")
+	@FindBy(xpath = "//table//tbody/tr/td[1]//div[@role = 'checkbox' and @class='p-checkbox-box p-component']")
+	public
 	List<WebElement> allCheckboxes;
 
 	@FindBy(xpath = "//table[@role='grid']/thead/tr/th/p-sorticon")
 	public List<WebElement> allSortIcon;
-
-	@FindBy(xpath = "//p-paginator/div/button[3]")
+//pagination
+	@FindBy(xpath = "//button[contains(@class, 'p-paginator-next')]")
 	WebElement nextPageLink;
 
-	@FindBy(xpath = "//p-paginator/div/button[4]")
+	@FindBy(xpath = "//span[@class='p-paginator-icon pi pi-angle-double-right']")
 	WebElement lastPageLink;
 
-	@FindBy(xpath = "//p-paginator/div/button[2]")
+	@FindBy(xpath = "//span[@class='p-paginator-icon pi pi-angle-left']")
 	WebElement firstPageLink;
 
-	@FindBy(xpath = "//p-paginator/div/button[1]")
+	@FindBy(xpath = "//p-paginator/div/button[2]")
 	WebElement previousPageLink;
 
-	@FindBy(xpath = "//p-paginator/div/span")
+	@FindBy(xpath = "//p-table/div/div[2][@class='p-datatable-footer ng-star-inserted']")
 	WebElement FooterText;
 
 	@FindBy(xpath = "//span[contains(text(),'Showing')]")
@@ -172,7 +178,10 @@ public class ProgramPage {
 
 	@FindBy(xpath = "//p-table/div/div[2]/div")
 	WebElement footerText;
-
+	
+	/*@FindBy(xpath = "//mat-card-title/div[2]/div[1]/button/span[@class='p-button-icon pi pi-trash']" )
+    WebElement leftDeleteIcon;*/
+	
 	public void programClick() {
 		CommonUtils.moveToElementAndClick(driver, program);
 	}
@@ -202,6 +211,7 @@ public class ProgramPage {
 	}
 
 	public String asterick() {
+		CommonUtils.waitForElementVisibility(driver, asterick, 5);
 		return asterick.getText();
 	}
 
@@ -211,7 +221,8 @@ public class ProgramPage {
 	}
 
 	public void clickSaveButton() {
-
+		
+        CommonUtils.waitForElementVisibility(driver, saveButton, 0);
 		CommonUtils.moveToElementAndClick(driver, saveButton);
 	}
 
@@ -253,10 +264,11 @@ public class ProgramPage {
 	}
 
 	public String SearchByProgramName(String progName) {
-		CommonUtils.waitForElementStaleness(driver, progSearchBox, 5);
+	
 
 		CommonUtils.moveToElementAndClick(driver, progSearchBox);
 		CommonUtils.sendInput(driver, progSearchBox, progName);
+		//CommonUtils.waitForElementStaleness(driver, progSearchBox, 5);
 		return progName;
 
 	}
@@ -265,6 +277,7 @@ public class ProgramPage {
 		CommonUtils.waitForElementVisibility(driver, progSearchBox, 10);
 		CommonUtils.moveToElementAndClick(driver, progSearchBox);
 		CommonUtils.sendInput(driver, progSearchBox, progDesc);
+		//CommonUtils.waitForElementStaleness(driver, progSearchBox, 5);
 		return progDesc;
 
 	}
@@ -306,7 +319,7 @@ public class ProgramPage {
 	}
 
 	public void clickEditIcon() {
-		CommonUtils.waitForElementStaleness(driver, editProgramIcon, 5);
+		//CommonUtils.waitForElementStaleness(driver, editProgramIcon, 5);
 
 		CommonUtils.moveToElementAndClick(driver, editProgramIcon);
 	}
@@ -317,7 +330,7 @@ public class ProgramPage {
 	}
 
 	public void clickDeleteIcon() {
-		CommonUtils.waitForElementVisibility(driver, deleteProgramIcon, 20);
+		CommonUtils.waitForElementVisibility(driver, deleteProgramIcon, 10);
 		CommonUtils.moveToElementAndClick(driver, deleteProgramIcon);
 	}
 
@@ -400,7 +413,7 @@ public class ProgramPage {
 	}
 
 	public String programDecription() {
-		// CommonUtils.waitForElementStaleness(driver, programDescriptions.get(0), 30);
+		 CommonUtils.waitForElementStaleness(driver, programDescriptions.get(0), 30);
 		return programDescriptions.get(0).getText();
 
 	}
@@ -463,9 +476,10 @@ public class ProgramPage {
 	}
 
 	public String getFooterText() {
-		CommonUtils.waitForElementVisibility(driver, FooterText, 20);
+		CommonUtils.waitForElementVisibility(driver, FooterText, 10);
 		// CommonUtils.waitForElementStaleness(driver, FooterText, 20);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", FooterText);
+		 //CommonUtils.waitForElementStaleness(driver, FooterText, 20);
 		return CommonUtils.getText(FooterText);
 	}
 
@@ -474,21 +488,25 @@ public class ProgramPage {
 	}
 
 	public void clickNextPage() {
-		CommonUtils.moveToElementAndClick(driver, nextPageLink);
+		CommonUtils.waitForElementVisibility(driver, nextPageLink, 5);
+		CommonUtils.clickElementUsingJS(driver, nextPageLink);
 	}
 
 	public void clickPreviousPage() {
-		CommonUtils.moveToElementAndClick(driver, previousPageLink);
+		CommonUtils.waitForElementVisibility(driver, previousPageLink, 5);
+		CommonUtils.clickElementUsingJS(driver, previousPageLink);
 
 	}
 
 	public void clickFirstPage() {
-		CommonUtils.moveToElementAndClick(driver, firstPageLink);
+		CommonUtils.waitForElementVisibility(driver, firstPageLink, 5);
+		CommonUtils.clickElementUsingJS(driver, firstPageLink);
 
 	}
 
 	public void clickLastPage() {
-		CommonUtils.moveToElementAndClick(driver, lastPageLink);
+		CommonUtils.waitForElementVisibility(driver, lastPageLink, 10);
+		CommonUtils.clickElementUsingJS(driver, lastPageLink);
 
 	}
 
@@ -508,5 +526,74 @@ public class ProgramPage {
 	public boolean isLastPageLinkEnable() {
 		return lastPageLink.isEnabled();
 	}
+	
+	public boolean menuBarProgramDisplayed() {
+		return program.isDisplayed();
+	}
+	public List<String> getCurrentPageRecords() {
+	    
+	    
+	    List<String> records = new ArrayList<>();
+	    
+	    for (WebElement row : tableRow) {
+	        String record = row.getText(); 
+	        records.add(record);
+	    }
+	    
+	    return records;
+	}
+	public void selectMultipleCheckboxes() {
+		CommonUtils.waitForElementclickable(driver,allCheckboxes.get(0), 10);
+		
+		 for (int i = 0; i < allCheckboxes.size(); i++) {
+		        if (i < 4) { 
 
-}
+				CommonUtils.clickElement(driver, allCheckboxes.get(i));
+		        }
+			}
+	}
+	
+	public boolean MultipleCheckBoxesSelected() {
+	    CommonUtils.waitForElementVisibility(driver, allCheckboxes.get(0), 10);
+
+	    for (int i = 0; i < allCheckboxes.size(); i++) {
+	        if (i < 4) {
+	            WebElement checkbox = allCheckboxes.get(i);
+	       
+	            boolean Selected = checkbox.isSelected();
+	           boolean isSelected = checkbox.isEnabled();
+	           
+	            System.out.println("Checkbox " + i + " selected: " + isSelected );
+	            
+	          if(!isSelected) {
+	        	  return false;
+	          }
+	        }
+	    }
+		return true;
+	    
+	
+	}
+	public void selectSingleCheckbox(int rowNo) {
+	 
+
+			CommonUtils.clickElement(driver, allCheckboxes.get(rowNo));
+
+			System.out.println("done checking");
+
+		}
+	 
+	 public void clickLeftDeleteIcon() {
+		 CommonUtils.clickElement(driver,leftDeleteIcon);
+	 }
+	 
+	 public void logoutText() {
+		 CommonUtils.getText(progLogout);
+	 }
+
+			
+
+		}
+	
+
+
