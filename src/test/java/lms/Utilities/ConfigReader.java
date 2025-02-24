@@ -1,7 +1,11 @@
 package lms.Utilities;
 
 import java.io.FileInputStream;
+
+import java.io.FileNotFoundException;
+
 import java.io.FileOutputStream;
+
 import java.io.IOException;
 import java.util.Properties;
 
@@ -32,6 +36,7 @@ public class ConfigReader {
 	public static String getBrowser() {
 		String browser = prop.getProperty("browser");
 		return browser;
+
 	}
 
 	public static String getUsername() {
@@ -60,3 +65,4 @@ public class ConfigReader {
 		
 	}
 }
+
