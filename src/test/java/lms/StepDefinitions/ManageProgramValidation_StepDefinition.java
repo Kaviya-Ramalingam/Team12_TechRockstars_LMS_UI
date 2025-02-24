@@ -1,7 +1,5 @@
 package lms.StepDefinitions;
 
-import static org.testng.Assert.assertFalse;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,6 +8,7 @@ import org.testng.Assert;
 
 import io.cucumber.java.en.Then;
 import lms.PageObjects.ProgramPage;
+import lms.Utilities.LoggerLoad;
 import lms.Utilities.TestContextSetup;
 
 public class ManageProgramValidation_StepDefinition {
@@ -75,8 +74,8 @@ public class ManageProgramValidation_StepDefinition {
 
 		List<String> headers = programPage.getProgramHeaders();
 		List<WebElement> sortArrows = programPage.allSortIcon;
-		System.out.println("Headers size: " + headers.size());
-		System.out.println("Sort Arrows size: " + sortArrows.size());
+		LoggerLoad.info("Headers size: " + headers.size());
+		LoggerLoad.info("Sort Arrows size: " + sortArrows.size());
 		int expectedArrowCount = headers.size() - 2; // excludded checkbox and edit/delete
 
 		Assert.assertEquals(sortArrows.size(), expectedArrowCount, "The number of sort arrows is incorrect");
@@ -98,11 +97,11 @@ public class ManageProgramValidation_StepDefinition {
 	@Then("Admin should see the text as {string} along with Pagination icon below the table")
 	public void admin_should_see_the_text_as_along_with_pagination_icon_below_the_table(String Expected) {
 
-		Assert.assertTrue(programPage.isFirstPageLinkVisible(),"first page button is not visible");
-		Assert.assertTrue(programPage.isLastPageLinkVisible(),"last page button is not visible");
-		Assert.assertTrue(programPage.isPreviousPageLinkVisible(),"previous page button is not visible");
-		Assert.assertTrue(programPage.isNextPageLinkVisible(),"next page button is not visible");
-				
+		Assert.assertTrue(programPage.isFirstPageLinkVisible(), "first page button is not visible");
+		Assert.assertTrue(programPage.isLastPageLinkVisible(), "last page button is not visible");
+		Assert.assertTrue(programPage.isPreviousPageLinkVisible(), "previous page button is not visible");
+		Assert.assertTrue(programPage.isNextPageLinkVisible(), "next page button is not visible");
+
 		String actualPaginationText = programPage.getPaginationText();
 
 		Assert.assertTrue(actualPaginationText.matches("Showing \\d+ to \\d+ of \\d+ entries"),
@@ -119,7 +118,10 @@ public class ManageProgramValidation_StepDefinition {
 
 	@Then("Admin should see the footer as {string}")
 	public void admin_should_see_the_footer_as(String footerText) {
-		//Assert.assertEquals(programPage.getFooterText(), footerText);
-		Assert.assertTrue(programPage.getFooterText().contains(footerText), "Footer text does not contain the expected message.");
+		
+		String regex = "In total there are \\d+ programs.";
+		LoggerLoad.info(programPage.getFooterText().trim());
+		Assert.assertTrue(programPage.getFooterText().trim().matches(regex));
+
 	}
 }
