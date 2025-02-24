@@ -7,11 +7,11 @@ public class PageObjectManager {
 	public LoginPage loginPage;
 	public WebDriver driver;
 
+	public LogoutPage logoutPage;
 	public ProgramPage programPage;
 	public BatchPage bp;
 	public ClassPage classPage;
 	public HomePage homePage;
-
 
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
@@ -26,6 +26,10 @@ public class PageObjectManager {
 		homePage = new HomePage(driver);
 		return homePage;
 		
+	}
+	public LogoutPage getLogoutPage() {
+		logoutPage = new LogoutPage(driver);
+		 return logoutPage;
 	}
 
 	public ProgramPage getProgramPage() {
