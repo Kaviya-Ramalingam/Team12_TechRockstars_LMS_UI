@@ -140,6 +140,18 @@ public class CommonUtils {
 			LoggerLoad.error("Failed to click element using JavaScript. Exception is: " + e.getMessage());
 		}
 	}
+	
+	public static void clickElement(WebDriver driver, WebElement element) {
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", element);
+	}
+	
+	
+	public static void waitForRefresh(long time) {
+		
+		try { Thread.sleep(time); } catch(Exception e) {e.printStackTrace(); }		
+	}
 
 	public static void clickElement(WebDriver driver, WebElement element) {
 		

@@ -1,13 +1,12 @@
 Feature: Add New Batch
 
-  Background: Admin is on the Batch page
-
+  Background: 
+   Given Admin is on the Batch Page 
+   
   Scenario: Verify sub menu displayed in batch menu bar
-    Given Admin is on the Batch page  
-    When Admin clicks "Batch" on the navigation bar
+    When Admin clicks "Batch" on navigation bar
     Then Admin should see sub menu in menu bar as "Add New Batch"
 
   Scenario: Validate Admin able to click on the Add new Batch Option
-    Given Admin is on the Batch page
-    When Admin clicks on "Add New batch" under the "batch" menu bar
+    When Admin clicks on Add New batch under the "batch" menu bar
     Then Admin should see the Batch Details pop up window
