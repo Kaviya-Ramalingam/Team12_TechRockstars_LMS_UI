@@ -4,6 +4,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 import org.openqa.selenium.OutputType;
@@ -14,9 +16,11 @@ import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
+import io.qameta.allure.Allure;
 import lms.DriverFactory.DriverFactory;
 import lms.Utilities.ConfigReader;
 import lms.Utilities.LoggerLoad;
+
 
 public class Hooks {
 	private static WebDriver driver;
@@ -38,6 +42,7 @@ public class Hooks {
 		if (scenario.isFailed()) {
 			final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 			scenario.attach(screenshot, "image/png", "My Screenshot");
+			Allure.addAttachment("Failed Scenario Screenshot", new ByteArrayInputStream(screenshot));
 		}
 
 	}
