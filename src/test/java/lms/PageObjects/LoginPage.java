@@ -2,19 +2,25 @@ package lms.PageObjects;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import lms.Utilities.CommonUtils;
 
 public class LoginPage {
 
 	WebDriver driver;
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
@@ -39,14 +45,34 @@ public class LoginPage {
 	WebElement LMSApplication;
 	@FindBy(xpath = "")
 	WebElement companyName;
-	@FindBy(xpath = "")
+	@FindBy(xpath = "//label[@id='mat-form-field-label-1']/span[1]")
 	WebElement user;
+	@FindBy(xpath = "//label[@id='mat-form-field-label-1']/span[2]")
+	WebElement asteriskSymbol1;
 	@FindBy(xpath = "//div[@class='mat-select-arrow ng-tns-c161-11']")
 	WebElement dropdownElement;
 	@FindBy(xpath = "//label[@id='mat-form-field-label-3']/span[1]")
 	WebElement loginPassword;
+	@FindBy(xpath = "//label[@id='mat-form-field-label-3']/span[2]")
+	WebElement asteriskSymbol2;
 	@FindBy(xpath = "//span[text()='Select the role']")
 	WebElement selectRole;
+	@FindBy(xpath = "//div[@id='mat-select-value-1']/span")
+	WebElement dropdown;
+	// **//div[@class='mat-form-field-infix ng-tns-c158-2']//selectrole;
+	@FindBy(xpath = "//span[text()=' Admin ']")
+	WebElement optionAdmin;
+	@FindBy(xpath = "//span[text()=' Staff ']")
+	WebElement optionStaff;
+	@FindBy(xpath = "//span[text()=' Student ']")
+	WebElement optionStudent;
+	// *****************************
+	@FindBy(xpath = "//mat-error[@id='mat-error-0']")
+	WebElement userErrormsg;
+	@FindBy(xpath = "//mat-error[@id='mat-error-1']")
+	WebElement passwordErrormsg;
+	@FindBy(xpath = "//div[@class='box']")
+	WebElement dashboard;
 
 	public void entervalidCredentials(String validUserName, String ValidPassword) {
 		CommonUtils.sendInput(driver, username, validUserName);
@@ -68,9 +94,9 @@ public class LoginPage {
 	}
 
 //****************
-	public String getLoginPageUrl() {
-
-		return driver.getCurrentUrl();
+	public String getLoginPageTitleText() {
+	
+		return driver.getTitle();
 
 	}
 
@@ -81,7 +107,9 @@ public class LoginPage {
 	}
 
 	public String getErrorPageTitle() {
-		String errorTitle = errorPageTitle.getText();
+		String invalidUrl = "https://feb-ui-hon-bbfd38d67ea9.herokuapp.com/";
+		driver.get(invalidUrl);
+		String errorTitle = driver.getTitle();
 		return errorTitle;
 
 	}
@@ -108,7 +136,6 @@ public class LoginPage {
 	public void getInvalidUrl() {
 		String invalidUrl = "https://feb-ui-hon-bbfd38d67ea9.herokuapp.com/";
 		driver.get(invalidUrl);
-		String s1=driver.getTitle();
 
 	}
 
@@ -124,14 +151,9 @@ public class LoginPage {
 		return user.getText();
 	}
 
-	public void getDropdown() {
-		Select dropdown = new Select(dropdownElement);
-		List<WebElement> dropdowns = dropdown.getOptions();
-		if (dropdowns.size() > 0) {
-			System.out.println("Dropdown has options");
-		} else {
-			System.out.println("Dropdown has no options");
-		}
+	public boolean getDropdown() {
+		return dropdown.isDisplayed();
+
 	}
 
 	public void getTextboxDisply() {
@@ -142,24 +164,87 @@ public class LoginPage {
 			System.out.println("Text field not present");
 		}
 	}
+
 	public String getLoginPassword() {
 		return loginPassword.getText();
 	}
-	
+
 	public String getSelectRole() {
 		return selectRole.getText();
-	}	
+	}
+
 	public void loginButtonDisplayed() {
 		if (login.isDisplayed()) {
 			System.out.println("Login button is displayed");
 		}
 	}
+
 	public void getUserColor() {
-		String userTextColor=user.getCssValue("color");
+		String userTextColor = user.getCssValue("color");
 		System.out.println("UserText color is :" + userTextColor);
 	}
+
 	public void getPasswordColor() {
-		String passwordTextColor=loginPassword.getCssValue("color");
+		String passwordTextColor = loginPassword.getCssValue("color");
 		System.out.println("PasswordText color is :" + passwordTextColor);
 	}
+
+	public boolean getAsteriskSymbol1() {
+		return asteriskSymbol1.isDisplayed();
+	}
+
+	public boolean getAsteriskSymbol2() {
+		return asteriskSymbol2.isDisplayed();
+	}
+
+	public boolean getCorrectSpelling() {
+		String givenString = "User,Password,Select the role";
+		String spelling1 = user.getText();
+		String spelling2 = loginPassword.getText();
+		String spelling3 = selectRole.getText();
+		if (givenString.contains(spelling1) && givenString.contains(spelling2) && givenString.contains(spelling3)) {
+			System.out.println("spelling is correct");
+			return true;
+
+		} else
+			return false;
+	}
+
+	public boolean getDropdownOption() {
+		dropdown.click();
+		String givenString = "Admin , Staff, Student";
+		String s1 = optionAdmin.getText();
+		String s2 = optionStaff.getText();
+		String s3 = optionStudent.getText();
+		if (givenString.contains(s1) && givenString.contains(s2) && givenString.contains(s3)) {
+			System.out.println("Dropdown options present");
+			return true;
+		} else
+			return false;
+	}
+
+	public boolean getUserErrorMsg() {
+
+		return userErrormsg.isDisplayed();
+	}
+
+	public boolean getPasswordErrorMsg() {
+
+		return userErrormsg.isDisplayed();
+	}
+
+	public boolean verifyDashboard() {
+		return dashboard.isDisplayed();
+
+	}
+
+	public void loginUsingKeyboard() {
+		Actions actions = new Actions(driver);
+		String value1 = "sdetnumpyninja@gmail.com";
+		String value2 = "Feb@2025";
+		String value3 = "Admin";
+		actions.sendKeys(username, value1).sendKeys(Keys.TAB).sendKeys(password, value2).sendKeys(Keys.TAB).click()
+				.sendKeys(role, value3).sendKeys(Keys.TAB).click().perform();
+	}
+
 }
