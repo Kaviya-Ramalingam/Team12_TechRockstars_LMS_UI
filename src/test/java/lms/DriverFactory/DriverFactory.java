@@ -25,8 +25,8 @@ public class DriverFactory {
 		if(browser.equalsIgnoreCase("chrome")) {
 			ChromeOptions co = new ChromeOptions();
 			co.addArguments("--remote-allow-origins=*");
-			co.addArguments("--headless");
-			thdriver.set(new ChromeDriver());
+			//co.addArguments("--headless");
+			thdriver.set(new ChromeDriver(co));
 		}
 		else if (browser.equalsIgnoreCase("firefox")) {
 			FirefoxOptions options = new FirefoxOptions();

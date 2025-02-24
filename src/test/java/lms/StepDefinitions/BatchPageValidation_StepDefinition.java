@@ -10,13 +10,13 @@ import lms.PageObjects.LoginPage;
 import lms.Utilities.ConfigReader;
 import lms.Utilities.TestContextSetup;
 
-public class Batch_Page_Validation_Steps {
+public class BatchPageValidation_StepDefinition {
 
 	TestContextSetup testcontextsetup;
 	LoginPage loginpage;
 	BatchPage bp;
 
-	public Batch_Page_Validation_Steps(TestContextSetup testcontextsetup) {
+	public BatchPageValidation_StepDefinition(TestContextSetup testcontextsetup) {
 
 		this.testcontextsetup = testcontextsetup;
 		loginpage = testcontextsetup.pageobjectmanager.getLoginPage();
@@ -56,6 +56,15 @@ public class Batch_Page_Validation_Steps {
 		assertEquals(heading, "Manage Batch");
 
 	}
+	
+
+@Then("Admin should be in the Manage Batch Page")
+public void admin_should_be_in_the_manage_batch_page() {
+	String heading = bp.getManageBatchHeading();
+	assertEquals(heading, "Manage Batch");
+}
+
+
 
 	@Then("Admin should see the disabled {string} under the header")
 	public void admin_should_see_the_disabled_under_the_header(String string) {
