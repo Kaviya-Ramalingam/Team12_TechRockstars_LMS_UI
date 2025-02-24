@@ -1,20 +1,33 @@
 package lms.Utilities;
 
 import java.time.Duration;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+
+public class CommonUtils {
+	
+public WebDriver driver;
+	
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonUtils {
 
 	public WebDriver driver;
+
 
 	public CommonUtils(WebDriver driver) {
 		this.driver = driver;
@@ -81,6 +94,11 @@ public class CommonUtils {
 		return textValue;
 	}
 
+
+	public static List<WebElement> waitForElementsVisibility(WebDriver driver, List<WebElement> elememt,
+			long durationInSeconds) {
+
+
 	public static Boolean waitForElementInVisibility(WebDriver driver, WebElement element, long durationInSeconds) {
 
 		Boolean webElement = null;
@@ -120,6 +138,7 @@ public class CommonUtils {
 	public static List<WebElement> waitForElementsVisibility(WebDriver driver, List<WebElement> elememt,
 			long durationInSeconds) {
 
+
 		List<WebElement> webElement = null;
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(durationInSeconds));
@@ -130,6 +149,7 @@ public class CommonUtils {
 		}
 		return webElement;
 	}
+
 
 	public static void clickElementUsingJS(WebDriver driver, WebElement element) {
 		try {
@@ -153,15 +173,8 @@ public class CommonUtils {
 		try { Thread.sleep(time); } catch(Exception e) {e.printStackTrace(); }		
 	}
 
-	public static void clickElement(WebDriver driver, WebElement element) {
-		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", element);
-	}
-public static void waitForRefresh(long time) {
-		
-		try { Thread.sleep(time); } catch(Exception e) {e.printStackTrace(); }		
-	}
+	
+
 
 
 }
