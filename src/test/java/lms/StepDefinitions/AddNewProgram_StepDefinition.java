@@ -126,8 +126,12 @@ public class AddNewProgram_StepDefinition {
 		} else if (expectedMesg.equals("programName must contain only letters and hyphens")) {
 			Assert.assertEquals("Program name error message does not match!", expectedMesg,
 					programPage.getFailedMesg());
+		}else if (expectedMesg.equals("cannot create program , since already exists")){
+			Assert.assertEquals(programPage.getProgramCreationErrorMessage(),expectedMesg);
 		}
-	}
+			
+		}
+	
 
 	@When("Admin searches with newly created program name")
 	public void admin_searches_with_newly_created_program_name() throws Exception {
