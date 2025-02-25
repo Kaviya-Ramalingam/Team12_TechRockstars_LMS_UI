@@ -28,27 +28,9 @@ public class Sort_Class_Stepdefnition {
 		loginpage = testcontextsetup.pageobjectmanager.getLoginPage();
 		classpage = testcontextsetup.pageobjectmanager.getClassPage();
 	}
-	
-	@Given("Admin is on the home page after login")
-	public void admin_is_on_the_home_page_after_login() {
-		
-		String username = ConfigReader.getUsername();
-		String password = ConfigReader.getpassword();
-		String role = ConfigReader.getrole();
-		
-		loginpage.entervalidCredentials(username, password);
-		loginpage.selectRole();
-		loginpage.selectAdmin(role);
-		loginpage.loginClick();
-	}
 
-	@Given("Admin is on the Manage class page after login")
-	public void admin_is_on_the_manage_class_page_after_login() {
-	    
-		assertEquals(classpage.pageTitle(), "LMS");
 
-	}
-	
+		
 //*************************************************	Batch Name
 	@When("Admin clicks on Arrow next to Batch Name")
 	public void admin_clicks_on_arrow_next_to_batch_name() throws InterruptedException 
@@ -112,7 +94,7 @@ public class Sort_Class_Stepdefnition {
 		classpage.classDescriptionSorting();
 	}
 	    
-	@Then("Admin See the Class Topic is sorted in Ascending order")
+	@Then("Admin See the Class Description is sorted in Ascending order")
 	public void admin_see_the_class_description_is_sorted_in_ascending_order() throws InterruptedException {
 		
 		List<String> sortedList = CommonUtils.sortAscendingOrder(classpage.classDescriptionTableData);
@@ -122,7 +104,7 @@ public class Sort_Class_Stepdefnition {
 		Assert.assertEquals(actualList, sortedList, "Class Description are not sorted in ascending order.");	
 	}
 	
-	@Then("Admin See the Class Topic is sorted in Dscending order")
+	@Then("Admin See the Class Description is sorted in Dscending order")
 	public void admin_see_the_class_description_is_sorted_in_descending_order() throws InterruptedException {
 		
 		List<String> sortedList = CommonUtils.sortDescendingOrder(classpage.classDescriptionTableData);
@@ -141,7 +123,7 @@ public class Sort_Class_Stepdefnition {
 		classpage.statusSorting();
 	}
 	    
-	@Then("Admin See the Class Topic is sorted in Ascending order")
+	@Then("Admin See the Class Status is sorted in Ascending order")
 	public void admin_see_the_class_status_is_sorted_in_ascending_order() throws InterruptedException {
 		
 		List<String> sortedList = CommonUtils.sortAscendingOrder(classpage.statusTableData);
@@ -151,7 +133,7 @@ public class Sort_Class_Stepdefnition {
 		Assert.assertEquals(actualList, sortedList, "Class Status are not sorted in ascending order.");	
 	}
 	
-	@Then("Admin See the Class Topic is sorted in Dscending order")
+	@Then("Admin See the Class Status is sorted in Dscending order")
 	public void admin_see_the_class_status_is_sorted_in_descending_order() throws InterruptedException {
 		
 		List<String> sortedList = CommonUtils.sortDescendingOrder(classpage.statusTableData);
@@ -178,7 +160,7 @@ public class Sort_Class_Stepdefnition {
 		Assert.assertEquals(actualList, sortedList, "Class Date is not sorted in ascending order.");	
 	}
 	
-	@Then("Admin See the Class Topic is sorted in Dscending order")
+	@Then("Admin See the Class Date is sorted in Dscending order")
 	public void admin_see_the_class_date_is_sorted_in_descending_order() throws InterruptedException {
 		
 		List<String> sortedList = CommonUtils.sortDescendingOrder(classpage.classDateTableData);
@@ -191,7 +173,7 @@ public class Sort_Class_Stepdefnition {
 	//****************************************** Staff Name
 	
 
-	@When("Admin clicks on Arrow next to Class Date")
+	@When("Admin clicks on Arrow next to Staff Name")
 	public void admin_clicks_on_arrow_next_to_staff_name() throws InterruptedException
 	{
 		classpage.staffNameSorting();
