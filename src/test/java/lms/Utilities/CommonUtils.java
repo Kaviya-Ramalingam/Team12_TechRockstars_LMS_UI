@@ -21,7 +21,8 @@ public class CommonUtils {
 
 
 	public WebDriver driver;
-
+Select select;
+static String browserName;
 
 	public CommonUtils(WebDriver driver) {
 		this.driver = driver;
@@ -161,6 +162,27 @@ public class CommonUtils {
 		
 		try { Thread.sleep(time); } catch(Exception e) {e.printStackTrace(); }		
 	}
+	
+	public boolean selectByVisibleText(String visibletext, WebElement element) {
+		boolean flag = false;
+		try {
+			if (element.isDisplayed()) {
+
+				select = new Select(element);
+				select.selectByVisibleText(visibletext);
+				flag = true;
+				System.out.println("Option selected by visibletext");
+
+			} else {
+				flag = false;
+				System.out.println("Option not selected by visibletext");
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return flag;
+	}
+	
 
 
 
