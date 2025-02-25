@@ -10,7 +10,7 @@ import lms.Utilities.ConfigReader;
 
 public class TestRunner {
 
-	@CucumberOptions(tags = "@tc06",features = "src/test/resources/Features/07_AddNewProgram.feature", 
+	@CucumberOptions(tags = "",features = "src/test/resources/Features", 
 			glue = { "lms.StepDefinitions", "lms.ApplicationHooks" },
 			monochrome = true, dryRun = false,
             plugin = { "html:target/cucumber.html", "json:target/cucumber.json" })
