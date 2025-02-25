@@ -148,7 +148,7 @@ public class AddNewProgram_StepDefinition {
 
 	@When("Admin Click on cancel button")
 	public void admin_click_on_cancel_button() {
-
+       LoggerLoad.info("Admin clicks on cancel button");
 		programPage.clickCancelButton();
 	}
 
@@ -208,5 +208,6 @@ public class AddNewProgram_StepDefinition {
 		
 		programPage.clickX();
 	}
+	
 
 }
