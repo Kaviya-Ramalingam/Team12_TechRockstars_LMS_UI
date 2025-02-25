@@ -23,7 +23,13 @@ public class Login_StepDefinition {
 
 	@Given("Admin gives the correct LMS portal URL")
 	public void admin_gives_the_correct_lms_portal_url() {
-		ConfigReader.getBrowser();
+		String username = ConfigReader.getUsername();
+		String password = ConfigReader.getpassword();
+		String role = ConfigReader.getrole();
+		loginpage.entervalidCredentials(username, password);
+		loginpage.selectRole();
+		loginpage.selectAdmin(role);
+		loginpage.loginClick();
 
 	}
 

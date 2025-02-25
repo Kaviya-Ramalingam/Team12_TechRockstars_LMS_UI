@@ -20,6 +20,7 @@ public class CommonUtils {
 	public WebDriver driver;
 
 
+
 	public CommonUtils(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -159,6 +160,7 @@ public class CommonUtils {
 		try { Thread.sleep(time); } catch(Exception e) {e.printStackTrace(); }		
 	}
 	
+
 	
 	public static int getRandomNumber() {
 		
@@ -166,6 +168,8 @@ public class CommonUtils {
         return 10000 + random.nextInt(90000);
         
 	}
+
+	
 
 
 

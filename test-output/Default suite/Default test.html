@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Feb 19 01:06:04 EST 2025</td>
+<td>Started on:</td><td>Mon Feb 24 17:26:18 EST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>5 seconds (5436 ms)</td>
+<tr><td>Total time:</td><td>14 seconds (14350 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,10 +76,37 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate login with valid credentials", "Login Page Validation"</td>
-<td></td>
-<td>4</td>
-<td>lms.Runner.TestRunner$TestNGTestRunner@2f9f7dcf</td></tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to search results found for program name", "search bar program Validation"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy43.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.SearchBarProgram_StepDefinition.admin_should_able_to_see_program_name_description_and_status_for_searched_program_name(SearchBarProgram_StepDefinition.java:31)
+	at ✽.Admin should able to see Program name, description, and status for searched program name(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/SearchBarProgram.feature:13)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1524744833", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1524744833'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy43.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.SearchBarProgram_StepDefinition.admin_should_able_to_see_program_name_description_and_status_for_searched_program_name(SearchBarProgram_StepDefinition.java:31)
+	at ✽.Admin should able to see Program name, description, and status for searched program name(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/SearchBarProgram.feature:13)
+</pre></div></td>
+<td>12</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@5b7a7f33</td></tr>
 </table><p>
 </body>
 </html>

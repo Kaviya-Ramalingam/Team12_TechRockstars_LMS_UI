@@ -110,7 +110,7 @@ Feature: Login Page Validation
     
     @tag20
     Scenario: Validate login with valid data in all field 
-    When  Admin enter valid data in all field and clicks login button
+    When  Admin enter valid data in all field and clicks login button.
     Then Admin should land on home page 
     
     @tag21
