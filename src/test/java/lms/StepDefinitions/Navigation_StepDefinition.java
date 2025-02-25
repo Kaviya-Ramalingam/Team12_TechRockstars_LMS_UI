@@ -39,9 +39,12 @@ public class Navigation_StepDefinition {
 		if (page.equals("program")) {
 			programPage.programClick();
 		} else if (page.equals("batch")) {
-			batchpage.clickOnBatchLink();;
+			batchpage.clickOnBatchLink();
+			;
 		} else if (page.equals("class")) {
+
 			classpage.classLinkInNavigationBar();
+
 		} else {
 			throw new IllegalArgumentException("Invalid page: " + page);
 		}
@@ -56,7 +59,9 @@ public class Navigation_StepDefinition {
 		} else if (page.equals("batch")) {
 			Assert.assertEquals(batchpage.getManageBatchHeading(), "Manage Batch");
 		} else if (page.equals("class")) {
-		Assert.assertEquals(classpage.getclassTopicText(), "Manage Class");
+
+			Assert.assertEquals(classpage.getclassTopicText(), "Manage Class");
+
 		} else {
 			throw new IllegalArgumentException("Invalid page: " + page);
 		}

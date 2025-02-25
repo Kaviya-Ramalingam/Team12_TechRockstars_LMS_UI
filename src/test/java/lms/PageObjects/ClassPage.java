@@ -24,69 +24,12 @@ public class ClassPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//button[text()='Add New Class']")
-	WebElement addNewClassBtn;
-
-	@FindBy(xpath = "//span[text()='Class Details']")
-	WebElement popupHeader;
-
-	@FindBy(xpath = "//button[contains(@class,'p-dialog-header-close')]")
-	WebElement closeBtnInPopup;
-
-	@FindBy(xpath = "//button[@label='Cancel']")
-	WebElement cancelBtnInPopup;
-
-	@FindBy(xpath = "//button[@label='Save']")
-	WebElement saveBtnInPopup;
-
 	@FindBy(xpath = "//span[normalize-space()='Class']")
 	WebElement classtab;
-
-	@FindBy(xpath = "//label[normalize-space()='Batch Name']")
-	WebElement batchNameLabel;
-
-	@FindBy(xpath = "//label[normalize-space()='Class Topic']")
-	WebElement classTopicLabel;
-
-	@FindBy(xpath = "//label[normalize-space()='Class Description']")
-	WebElement classDescriptionLabel;
-
-	@FindBy(xpath = "//lable[@for='online']")
-	WebElement statusLabel;
-
-	@FindBy(xpath = "//label[normalize-space()='Select Class Dates']")
-	WebElement classDateLabel;
-
-	@FindBy(xpath = "//label[normalize-space()='Staff Name']")
-	WebElement staffNameLabel;
-
-	@FindBy(xpath = "//label[normalize-space()='No of Classes']")
-	WebElement noOfClassesLabel;
 
 	// ****************************************************
 	@FindBy(xpath = "//input[@id='icon']")
 	WebElement noOfClasses;
-
-	@FindBy(xpath = "//input[@placeholder='Select a Batch Name']")
-	public WebElement batchNameTextbox;
-
-	@FindBy(xpath = "(//div[contains(@class,'p-dropdown-trigger')])[1]")
-	public WebElement batchNameDropdownIcon;
-
-	@FindBy(xpath = "//input[@id='classTopic']")
-	WebElement classTopicTextbox;
-
-	@FindBy(xpath = "//input[@id='classDescription']")
-	WebElement classDescriptionTextbox;
-
-	@FindBy(xpath = "//input[@id='icon']")
-	WebElement classDateTextbox;
-
-	@FindBy(xpath = "//label[normalize-space()='Staff Name']")
-	WebElement staffNameTextbox;
-
-	@FindBy(xpath = "//div[contains(text(),'Active')]//div[2]")
-	WebElement statusActiveRadioBtn;
 
 	@FindBy(xpath = "//small[normalize-space()='Batch Name is required.']")
 	WebElement redErrorTextMsg;
@@ -115,6 +58,35 @@ public class ClassPage {
 
 	@FindBy(xpath = "//p-dropdown[@id='batchName']//div//div[@role='button']/span")
 	WebElement batchNameDropDown;
+
+	@FindBy(xpath = "//span[@class='p-button-icon p-button-icon-left pi pi-check']/following-sibling::span")
+	WebElement deleteYesButton;
+
+	@FindBy(xpath = "//*[text()='Successful']")
+	WebElement toastMsg;
+
+	@FindBy(xpath = "//button[contains(@class, 'p-dialog-header-close')]")
+	WebElement deleteCloseButton;
+
+	@FindBy(xpath = "//div[normalize-space()='Manage Class']")
+	WebElement manageClassHeading;
+
+	@FindBy(xpath = "//input[@id='filterGlobal']")
+	WebElement searchBox;
+
+	@FindBy(xpath = "\"//*[text()='Class']\"")
+	WebElement classLink;
+
+	@FindBy(xpath = "//div[@class = 'ng-star-inserted']")
+	WebElement navigation_buttons;
+
+	// Delete Class
+
+	@FindBy(xpath = "//span[normalize-space()='Confirm']")
+	WebElement deleteConfirmMsg;
+
+	@FindBy(xpath = "//span[@class='p-button-icon p-button-icon-left pi pi-times']/following-sibling::span")
+	WebElement deleteNoButton;
 
 	// Login Page WebElements
 
@@ -220,27 +192,50 @@ public class ClassPage {
 
 	// Add New Class and Class Details Pop-up Window WebElements
 
-	// @FindBy(xpath = "//button[text()='Add New Class']") public WebElement
-	// addNewClassBtn;
+	@FindBy(xpath = "//button[text()='Add New Class']")
+	public WebElement addNewClassBtn;
 
-	// @FindBy(xpath = "//span[text()='Class Details']") public WebElement
-	// popupHeader;
+	@FindBy(xpath = "//span[text()='Class Details']")
+	public WebElement popupHeader;
 
-	// @FindBy(xpath = "//button[contains(@class,'p-dialog-header-close')]") public
-	// WebElement closeBtnInPopup;
+	@FindBy(xpath = "//button[contains(@class,'p-dialog-header-close')]")
+	public WebElement closeBtnInPopup;
 
-	// @FindBy(xpath = "//button[@label='Cancel']") public WebElement
-	// cancelBtnInPopup;
+	@FindBy(xpath = "//button[@label='Cancel']")
+	public WebElement cancelBtnInPopup;
 
-	// @FindBy(xpath = "//button[@label='Save']") public WebElement saveBtnInPopup;
+	@FindBy(xpath = "//button[@label='Save']")
+	public WebElement saveBtnInPopup;
 
 	@FindBy(xpath = "//label[@class='requiredSession']")
 	public WebElement requiredField;
 
+	@FindBy(xpath = "//label[text()='Batch Name']")
+	public WebElement batchNameLabel;
+
+	@FindBy(xpath = "//label[text()='Batch Name']/..//input[contains(@class,'p-inputtext')]")
+	public WebElement batchNameTextbox;
+
+	@FindBy(xpath = "(//div[contains(@class,'p-dropdown-trigger')])[1]")
+	public WebElement batchNameDropdownIcon;
 
 	@FindBy(xpath = "//li[@role='option']")
 	public List<WebElement> dropdownOptions;
 
+	@FindBy(xpath = "//label[text()='Class Topic ']")
+	public WebElement classTopicLabel;
+
+	@FindBy(xpath = "//input[@id='classTopic']")
+	public WebElement classTopicTextbox;
+
+	@FindBy(xpath = "//label[text()='Class Description']")
+	public WebElement classDescriptionLabel;
+
+	@FindBy(xpath = "//input[@id='classDescription']")
+	public WebElement classDescriptionTextbox;
+
+	@FindBy(xpath = "//lable[text()='Status']")
+	public WebElement statusLabel;
 
 	@FindBy(xpath = "//div[text()=' Active ']")
 	public WebElement statusActiveLabel;
@@ -248,30 +243,29 @@ public class ClassPage {
 	@FindBy(xpath = "//div[text()=' Inactive ']")
 	public WebElement statusInactiveLabel;
 
-	// @FindBy(xpath = "//p-radiobutton[@ng-reflect-input-id='Active']") public
-	// WebElement statusActiveRadioBtn;
+	@FindBy(xpath = "//p-radiobutton[@ng-reflect-input-id='Active']")
+	public WebElement statusActiveRadioBtn;
 
 	@FindBy(xpath = "//p-radiobutton[@ng-reflect-input-id='Inactive']")
 	public WebElement statusInactiveRadioBtn;
 
-	// @FindBy(xpath = "//label[text()=' Select Class Dates ']") public WebElement
-	// classDateLabel;
+	@FindBy(xpath = "//label[text()=' Select Class Dates ']")
+	public WebElement classDateLabel;
 
-	// @FindBy(xpath = "//span[contains(@class,'p-calendar')]/input") public
-	// WebElement classDateTextbox;
+	@FindBy(xpath = "//span[contains(@class,'p-calendar')]/input")
+	public WebElement classDateTextbox;
 
-	// @FindBy(xpath = "//label[text()='Staff Name']") public WebElement
-	// staffNameLabel;
+	@FindBy(xpath = "//label[text()='Staff Name']")
+	public WebElement staffNameLabel;
 
-	// @FindBy(xpath = "//label[text()='Staff
-	// Name']/..//input[contains(@class,'p-inputtext')]") public WebElement
-	// staffNameTextbox;
+	@FindBy(xpath = "//label[text()='Staff Name']/..//input[contains(@class,'p-inputtext')]")
+	public WebElement staffNameTextbox;
 
 	@FindBy(xpath = "(//div[contains(@class,'p-dropdown-trigger')])[2]")
 	public WebElement staffNameDropdownIcon;
 
-	// @FindBy(xpath = "//label[text()='No of Classes']") public WebElement
-	// noOfClassesLabel;
+	@FindBy(xpath = "//label[text()='No of Classes']")
+	public WebElement noOfClassesLabel;
 
 	@FindBy(xpath = "//input[@id='classNo']")
 	public WebElement noOfClassesTextbox;
@@ -327,115 +321,6 @@ public class ClassPage {
 
 	@FindBy(xpath = "//button[contains(@class, 'p-disabled')]/span[@class='p-paginator-icon pi pi-angle-left']")
 	public WebElement disabledLeftAnglePaginationIcon;
-	
-	@FindBy(xpath = "//span[normalize-space()='Confirm']")
-	WebElement deleteConfirmMsg;
-
-	@FindBy(xpath = "//span[@class='p-button-icon p-button-icon-left pi pi-times']/following-sibling::span")
-	WebElement deleteNoButton;
-
-	@FindBy(xpath = "//span[@class='p-button-icon p-button-icon-left pi pi-check']/following-sibling::span")
-	WebElement deleteYesButton;
-
-	@FindBy(xpath = "//*[text()='Successful']")
-	WebElement toastMsg;
-
-	@FindBy(xpath = "//button[contains(@class, 'p-dialog-header-close')]")
-	WebElement deleteCloseButton;
-
-	@FindBy(xpath = "//div[normalize-space()='Manage Class']")
-	WebElement manageClassHeading;
-
-	@FindBy(xpath = "//input[@id='filterGlobal']")
-	WebElement searchBox;
-
-	@FindBy(xpath = "\"//*[text()='Class']\"")
-	WebElement classLink;
-
-	@FindBy(xpath = "//div[@class = 'ng-star-inserted']")
-	WebElement navigation_buttons;
-
-	public void clickOnClassLink() {
-
-		List<WebElement> navElements = navigation_buttons.findElements(By.tagName("button"));
-		navElements.get(3).click();
-	}
-
-	public void clickDeleteIcon() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement deleteIcon = wait.until(ExpectedConditions
-				.elementToBeClickable(By.xpath("//div[@class='action']//button[@icon='pi pi-trash']")));
-
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", deleteIcon);
-	}
-
-	public String getDeleteConfirmMsg() {
-
-		return deleteConfirmMsg.getText();
-	}
-
-	public String getDeleteYesMsg() {
-		return deleteYesButton.getText();
-
-	}
-
-	public String getDeleteNoMsg() {
-		return deleteNoButton.getText();
-	}
-
-	public void setPName(String progName) {
-		searchBox.sendKeys(progName);
-
-	}
-
-	public void clickCloseButton() {
-		deleteCloseButton.click();
-	}
-
-	public void clickDeleteIcon(String batchName) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		WebElement deleteIcon = wait.until(ExpectedConditions.elementToBeClickable(
-				By.xpath("//td[text()='" + batchName + "']/following-sibling::td/div/span[2]/button")));
-
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", deleteIcon);
-	}
-
-	public void clickDeleteYesBtn() {
-		CommonUtils.clickElement(driver, deleteYesButton);
-
-	}
-
-	public void clickDeleteNoBtn() {
-		CommonUtils.clickElement(driver, deleteNoButton);
-	}
-
-	public String getbatchNameFromResults(int rowNo) {
-
-		WebElement ele = driver.findElement(By.xpath("//tbody[@class='p-datatable-tbody']/tr[" + rowNo + "]/td[6]"));
-		return ele.getText();
-	}
-
-	public void setBName(String batchName) {
-		searchBox.sendKeys(batchName);
-
-	}
-
-	public String getToastMsg() {
-		waitForElementToBeVisible(toastMsg, 15);
-		return toastMsg.getText();
-	}
-
-	public void waitForElementToBeVisible(WebElement element, int i) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(i));
-		wait.until(ExpectedConditions.visibilityOf(element));
-	}
-
-	public String getManageClassHeading() {
-		String heading = manageClassHeading.getText();
-		return heading;
-	}
 
 // Navigation Bar Methods
 
@@ -544,10 +429,12 @@ public class ClassPage {
 	}
 
 	public String totalClassesTextInFooter() {
+
 		CommonUtils.waitForElementVisibility(driver, totalClassesTextInFooter, 20);
 		// CommonUtils.waitForElementStaleness(driver, totalClassesTextInFooter, 20);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", totalClassesTextInFooter);
 		return CommonUtils.getText(totalClassesTextInFooter);
+
 	}
 
 //Pagination Methods
@@ -573,9 +460,6 @@ public class ClassPage {
 		boolean drapicon = doubleRightAngleIconPagination.isDisplayed() && doubleRightAngleIconPagination.isEnabled();
 		return drapicon;
 	}
-
-// Delete Class
-
 
 	public void getMandatoryField(String classTopics) {
 		CommonUtils.sendInput(driver, classTopicTextbox, classTopics);
@@ -741,6 +625,7 @@ public class ClassPage {
 	}
 
 //-------------------------------------Class Date-------------------
+
 	public void classDateSorting() {
 		// classDateSortIcon.click();
 		CommonUtils.waitForElementclickable(driver, classDateSortIcon, 5);
@@ -766,6 +651,7 @@ public class ClassPage {
 	}
 
 //------------------------------------Staff Name---------------------
+
 	public void staffNameSorting() {
 		// staffNameSortIcon.click();
 		CommonUtils.waitForElementclickable(driver, staffNameSortIcon, 5);
@@ -775,6 +661,88 @@ public class ClassPage {
 	public List<String> getstaffNameTableDataText() {
 		return staffNameTableData.stream().map(WebElement::getText)// Extracting text from each WebElement
 				.map(String::toLowerCase).collect(Collectors.toList()); // Collecting them into a list
+	}
+
+	public void clickOnClassLink() {
+
+		List<WebElement> navElements = navigation_buttons.findElements(By.tagName("button"));
+		navElements.get(3).click();
+	}
+
+	public void clickDeleteIcon() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement deleteIcon = wait.until(ExpectedConditions
+				.elementToBeClickable(By.xpath("//div[@class='action']//button[@icon='pi pi-trash']")));
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", deleteIcon);
+	}
+
+	public String getDeleteConfirmMsg() {
+
+		return deleteConfirmMsg.getText();
+	}
+
+	public String getDeleteYesMsg() {
+		return deleteYesButton.getText();
+
+	}
+
+	public String getDeleteNoMsg() {
+		return deleteNoButton.getText();
+	}
+
+	public void setPName(String progName) {
+		searchBox.sendKeys(progName);
+
+	}
+
+	public void clickCloseButton() {
+		deleteCloseButton.click();
+	}
+
+	public void clickDeleteIcon(String batchName) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement deleteIcon = wait.until(ExpectedConditions.elementToBeClickable(
+				By.xpath("//td[text()='" + batchName + "']/following-sibling::td/div/span[2]/button")));
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", deleteIcon);
+	}
+
+	public void clickDeleteYesBtn() {
+		CommonUtils.clickElement(driver, deleteYesButton);
+
+	}
+
+	public void clickDeleteNoBtn() {
+		CommonUtils.clickElement(driver, deleteNoButton);
+	}
+
+	public String getbatchNameFromResults(int rowNo) {
+
+		WebElement ele = driver.findElement(By.xpath("//tbody[@class='p-datatable-tbody']/tr[" + rowNo + "]/td[6]"));
+		return ele.getText();
+	}
+
+	public void setBName(String batchName) {
+		searchBox.sendKeys(batchName);
+
+	}
+
+	public String getToastMsg() {
+		waitForElementToBeVisible(toastMsg, 15);
+		return toastMsg.getText();
+	}
+
+	public void waitForElementToBeVisible(WebElement element, int i) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(i));
+		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+
+	public String getManageClassHeading() {
+		String heading = manageClassHeading.getText();
+		return heading;
 	}
 
 }

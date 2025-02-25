@@ -24,7 +24,7 @@ Then Admin should land on the login page
     Then Admin should see red  asterisk mark  beside mandatory field "Name"
 
 @tce04
-  Scenario: Verify edit Program Name
+  Scenario Outline: Verify edit Program Name
     Given Admin is on Program page
     When Admin edits the program name "<dataKey>" and "<SheetName>" and click on save button 
     Then Updated program name is seen by the Admin
@@ -35,7 +35,7 @@ Then Admin should land on the login page
     
     
 @tce05
-  Scenario: Verify edit Description
+  Scenario Outline: Verify edit Description
     Given Admin is on Program page
     When Admin edits the description text "<dataKey>" and "<SheetName>" and click on save button
     Then Admin can see the description is updated
