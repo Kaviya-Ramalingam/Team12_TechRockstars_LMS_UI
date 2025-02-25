@@ -142,8 +142,12 @@ public class BatchAddNewPopup_StepDefinition {
 			Map<String, String> data = ExcelReader.getData("VALID", "batch");
 
 			bp.selectProgram(ConfigReader.getProperty("program.name"));
+			
+			String batchSuffix = ""+CommonUtils.getRandomNumber();
+			String batchName = ConfigReader.getProperty("program.name") + batchSuffix;
+			ConfigReader.setProperty("batch.name", batchName);
 
-			bp.setBatchNameSuffix(data.get("batch-suffix"));
+			bp.setBatchNameSuffix(batchSuffix);
 			bp.setProgramDescription(ConfigReader.getProperty("program.description"));
 			bp.selectStatus(data.get("status"));
 			bp.setNumOfClasses(data.get("no-of-classes"));
