@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.safari.SafariDriver;
 
 import lms.Utilities.ConfigReader;
 import lms.Utilities.LoggerLoad;
@@ -23,7 +24,7 @@ public class DriverFactory {
 		if(browser.equalsIgnoreCase("chrome")) {
 			ChromeOptions co = new ChromeOptions();
 			co.addArguments("--remote-allow-origins=*");
-			//co.addArguments("--headless");
+			co.addArguments("--headless");
 			thdriver.set(new ChromeDriver(co));
 		}
 		else if (browser.equalsIgnoreCase("firefox")) {
@@ -31,9 +32,9 @@ public class DriverFactory {
 			FirefoxOptions options = new FirefoxOptions();
 
 			options.addArguments("--headless");
-			thdriver.set(new FirefoxDriver());
+			thdriver.set(new FirefoxDriver(options));
 		} else if (browser.equalsIgnoreCase("safari")) {
-			thdriver.set(new EdgeDriver());
+			thdriver.set(new SafariDriver());
 
 		}
 
