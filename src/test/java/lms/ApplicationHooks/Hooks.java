@@ -37,7 +37,7 @@ public class Hooks {
 		
 	}
 
-	@AfterStep
+	@After
 	public void AddScreenshot(Scenario scenario) throws IOException {
 
 		if (scenario.isFailed()) {

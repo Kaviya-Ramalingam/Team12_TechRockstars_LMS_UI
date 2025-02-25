@@ -90,6 +90,9 @@ public class ProgramPage {
 
 	@FindBy(xpath = "//*[text()='Program Updated']")
 	WebElement progUpdatedMesg;
+	
+	@FindBy(xpath = "//*[text()='cannot create program , since already exists']")
+	WebElement progCreationErrorMesg;
 
 	// edit program
 	@FindBy(xpath = "//button[@id = 'editProgram']")
@@ -581,6 +584,10 @@ public class ProgramPage {
 	 
 	 public void logoutText() {
 		 CommonUtils.getText(progLogout);
+	 }
+	 
+	 public String  getProgramCreationErrorMessage() {
+		return CommonUtils.getText(progCreationErrorMesg);
 	 }
 
 			
