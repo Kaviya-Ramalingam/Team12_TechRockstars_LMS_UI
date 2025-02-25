@@ -146,7 +146,7 @@ public class Login_StepDefinition {
 
 	}
 
-	@When("Admin enter valid data in all field and clicks login button")
+	@When("Admin enter valid data in all field and clicks login button.")
 	public void admin_enter_valid_data_in_all_field_and_clicks_login_button() {
 		String username = ConfigReader.getUsername();
 		String password = ConfigReader.getpassword();

@@ -1,19 +1,16 @@
 package lms.Utilities;
 
 import java.time.Duration;
-
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 import org.openqa.selenium.JavascriptExecutor;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
@@ -160,6 +157,14 @@ public class CommonUtils {
 	public static void waitForRefresh(long time) {
 		
 		try { Thread.sleep(time); } catch(Exception e) {e.printStackTrace(); }		
+	}
+	
+	
+	public static int getRandomNumber() {
+		
+		Random random = new Random();
+        return 10000 + random.nextInt(90000);
+        
 	}
 
 
