@@ -25,7 +25,8 @@ public class ProgramPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
+	
+    //manage program
 	@FindBy(xpath = "//button[@id='program']/span[1]")
 	WebElement program;
 	
@@ -34,6 +35,7 @@ public class ProgramPage {
 
 	@FindBy(xpath = "//*[contains(text(), 'Manage Program')]")
 	WebElement ManageProgramTitle;
+	
 	// add new program
 	@FindBy(xpath = "//button[contains(text(),'Add New Program')]")
 	WebElement addNewProgram;
@@ -90,7 +92,6 @@ public class ProgramPage {
 	WebElement progUpdatedMesg;
 
 	// edit program
-
 	@FindBy(xpath = "//button[@id = 'editProgram']")
 	public WebElement editProgramIcon;
 
@@ -100,7 +101,6 @@ public class ProgramPage {
 	 * @FindBy(xpath = "//table//tbody//tr[1]//td//button[@id='deleteProgram']")
 	 * WebElement deleteIcon;
 	 */
-
 	@FindBy(xpath = "//div[@class='action']//button[@icon='pi pi-trash']")
 	public WebElement deleteProgramIcon;
 
@@ -137,11 +137,11 @@ public class ProgramPage {
 
 	@FindBy(xpath = "//table[@role='grid']/tbody/tr/td[3]")
 	public List<WebElement> programDescriptions;
+	
 	public @FindBy(xpath = "//table[@role='grid']/tbody/tr/td[4]") 
 	List<WebElement> programsStatus;
 
 	// manageProgramValidation
-
 	@FindBy(xpath = "//thead[@class='p-datatable-thead']/tr/th")
 	List<WebElement> programHeader;
 
@@ -157,7 +157,8 @@ public class ProgramPage {
 
 	@FindBy(xpath = "//table[@role='grid']/thead/tr/th/p-sorticon")
 	public List<WebElement> allSortIcon;
-//pagination
+	
+  //pagination
 	@FindBy(xpath = "//button[contains(@class, 'p-paginator-next')]")
 	WebElement nextPageLink;
 
@@ -179,9 +180,6 @@ public class ProgramPage {
 	@FindBy(xpath = "//p-table/div/div[2]/div")
 	WebElement footerText;
 	
-	/*@FindBy(xpath = "//mat-card-title/div[2]/div[1]/button/span[@class='p-button-icon pi pi-trash']" )
-    WebElement leftDeleteIcon;*/
-	
 	public void programClick() {
 		CommonUtils.moveToElementAndClick(driver, program);
 	}
@@ -195,7 +193,6 @@ public class ProgramPage {
 	}
 
 	public boolean programDetailsPopup() {
-
 		return programDetails.isDisplayed();
 	}
 
@@ -206,7 +203,6 @@ public class ProgramPage {
 	}
 
 	public String programDetailsTitle() throws InterruptedException {
-
 		return programDetails.getText();
 	}
 
@@ -221,7 +217,6 @@ public class ProgramPage {
 	}
 
 	public void clickSaveButton() {
-		
         CommonUtils.waitForElementVisibility(driver, saveButton, 0);
 		CommonUtils.moveToElementAndClick(driver, saveButton);
 	}
@@ -254,7 +249,7 @@ public class ProgramPage {
 	}
 
 	public void clickActiveRadioBtn() {
-		CommonUtils.waitForElementclickable(driver, activeRadioBtn, 10);
+		CommonUtils.waitForElementclickable(driver, activeRadioBtn, 15);
 		CommonUtils.moveToElementAndClick(driver, activeRadioBtn);
 
 	}
@@ -265,10 +260,9 @@ public class ProgramPage {
 
 	public String SearchByProgramName(String progName) {
 	
-
 		CommonUtils.moveToElementAndClick(driver, progSearchBox);
 		CommonUtils.sendInput(driver, progSearchBox, progName);
-		//CommonUtils.waitForElementStaleness(driver, progSearchBox, 5);
+
 		return progName;
 
 	}
@@ -277,7 +271,6 @@ public class ProgramPage {
 		CommonUtils.waitForElementVisibility(driver, progSearchBox, 10);
 		CommonUtils.moveToElementAndClick(driver, progSearchBox);
 		CommonUtils.sendInput(driver, progSearchBox, progDesc);
-		//CommonUtils.waitForElementStaleness(driver, progSearchBox, 5);
 		return progDesc;
 
 	}
@@ -476,10 +469,9 @@ public class ProgramPage {
 	}
 
 	public String getFooterText() {
+		
 		CommonUtils.waitForElementVisibility(driver, FooterText, 10);
-		// CommonUtils.waitForElementStaleness(driver, FooterText, 20);
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", FooterText);
-		 //CommonUtils.waitForElementStaleness(driver, FooterText, 20);
 		return CommonUtils.getText(FooterText);
 	}
 

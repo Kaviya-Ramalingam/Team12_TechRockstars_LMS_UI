@@ -64,5 +64,17 @@ public class ConfigReader {
 		WriteDataIntoConfig();
 		
 	}
+	
+	//***
+	public static void setBrowserName(String browser) {
+		 browserName = browser;
+	}
+	public static String getBrowserName() {
+		if (browserName != null) {
+			return browserName;
+		}else {
+			throw new RuntimeException("there is no browser ");
+	}
+	}
 }
 

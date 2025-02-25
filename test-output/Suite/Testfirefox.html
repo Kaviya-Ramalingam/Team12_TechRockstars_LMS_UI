@@ -1,0 +1,1648 @@
+<html>
+<head>
+<title>TestNG:  Testfirefox</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Testfirefox</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>116/27/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Feb 24 21:47:41 EST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>991 seconds (991348 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate editing description and No. of classes fields with invalid data in the pop up", "Edit Icon Validation"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//small[text()=&apos;This field should start with an alphabet and min 2 character.&apos;]&quot;}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f9206a6c9801035bb7f6731b887fcecf, findElement {using=xpath, value=//small[text()=&apos;This field should start with an alphabet and min 2 character.&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63075}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63075/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f9206a6c9801035bb7f6731b887fcecf
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.getText(Unknown Source)
+	at lms.PageObjects.BatchPage.getDescriptInvalidMsgDisplayed(BatchPage.java:194)
+	at lms.StepDefinitions.BatchEditIconValidation_StepDefinition.admin_should_get_a_error_message_under_the_respective_field(BatchEditIconValidation_StepDefinition.java:105)
+	at ✽.Admin should get a error message under the respective field(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/16_BatchEditIconValidation.feature:20)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1801903014", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1801903014'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//small[text()=&apos;This field should start with an alphabet and min 2 character.&apos;]&quot;}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f9206a6c9801035bb7f6731b887fcecf, findElement {using=xpath, value=//small[text()=&apos;This field should start with an alphabet and min 2 character.&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63075}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63075/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f9206a6c9801035bb7f6731b887fcecf
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.getText(Unknown Source)
+	at lms.PageObjects.BatchPage.getDescriptInvalidMsgDisplayed(BatchPage.java:194)
+	at lms.StepDefinitions.BatchEditIconValidation_StepDefinition.admin_should_get_a_error_message_under_the_respective_field(BatchEditIconValidation_StepDefinition.java:105)
+	at ✽.Admin should get a error message under the respective field(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/16_BatchEditIconValidation.feature:20)
+</pre></div></td>
+<td>17</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify edit Status", "Edit program Validation"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_can_change_the_status_of_the_program_and_click_on_save_button(EditProgram_StepDefinition.java:95)
+	at ✽.Admin can change the status of the program and click on save button(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:50)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace119982373", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace119982373'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_can_change_the_status_of_the_program_and_click_on_save_button(EditProgram_StepDefinition.java:95)
+	at ✽.Admin can change the status of the program and click on save button(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:50)
+</pre></div></td>
+<td>11</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify back button function", "Validation on Logout button"</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at lms.StepDefinitions.Logout_StepDefinition.admin_should_receive_error_message(Logout_StepDefinition.java:67)
+	at ✽.Admin should receive error message(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/30_Logout.feature:18)
+... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1002426428", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1002426428'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at lms.StepDefinitions.Logout_StepDefinition.admin_should_receive_error_message(Logout_StepDefinition.java:67)
+	at ✽.Admin should receive error message(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/30_Logout.feature:18)
+</pre></div></td>
+<td>3</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate disabled "Delete Icon" under the header in the Batch Page", "Batch Page Validation"</td>
+<td><div><pre>java.lang.AssertionError: expected [false] but found [true]
+	at lms.StepDefinitions.BatchPageValidation_StepDefinition.admin_should_see_the_disabled_under_the_header(BatchPageValidation_StepDefinition.java:72)
+	at ✽.Admin should see the disabled &quot;Delete Icon&quot; under the header(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/05_BatchPageValidation.feature:18)
+... Removed 7 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1321510785", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1321510785'><pre>java.lang.AssertionError: expected [false] but found [true]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:1067)
+	at org.testng.Assert.assertEquals(Assert.java:1031)
+	at org.testng.Assert.assertEquals(Assert.java:1077)
+	at lms.StepDefinitions.BatchPageValidation_StepDefinition.admin_should_see_the_disabled_under_the_header(BatchPageValidation_StepDefinition.java:72)
+	at ✽.Admin should see the disabled &quot;Delete Icon&quot; under the header(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/05_BatchPageValidation.feature:18)
+</pre></div></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify dropdown option to select role", "Login Page Validation"</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5b28153f68c1789b3472e3f5aa6cd392, getElementText {id=f.EFCECF9E67BEF75646D852D29538E730.d.0692E8AE3900AEE54F98B9763E629473.e.33}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55700}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55700/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (5b28153f68c1789b3472e3f5aa6cd392)] -&gt; xpath: //span[text()=&apos; Student &apos;]]
+Session ID: 5b28153f68c1789b3472e3f5aa6cd392
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:191)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.getText(Unknown Source)
+	at lms.PageObjects.LoginPage.getDropdownOption(LoginPage.java:221)
+	at lms.StepDefinitions.Login_StepDefinition.admin_should_see_options_in_dropdown(Login_StepDefinition.java:130)
+	at ✽.Admin should see &quot;Admin , Staff, Student&quot; options in dropdown(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/01_Login.feature:87)
+... Removed 5 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace191124333", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace191124333'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5b28153f68c1789b3472e3f5aa6cd392, getElementText {id=f.EFCECF9E67BEF75646D852D29538E730.d.0692E8AE3900AEE54F98B9763E629473.e.33}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55700}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55700/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on mac (5b28153f68c1789b3472e3f5aa6cd392)] -&gt; xpath: //span[text()=&apos; Student &apos;]]
+Session ID: 5b28153f68c1789b3472e3f5aa6cd392
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:191)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.getText(Unknown Source)
+	at lms.PageObjects.LoginPage.getDropdownOption(LoginPage.java:221)
+	at lms.StepDefinitions.Login_StepDefinition.admin_should_see_options_in_dropdown(Login_StepDefinition.java:130)
+	at ✽.Admin should see &quot;Admin , Staff, Student&quot; options in dropdown(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/01_Login.feature:87)
+</pre></div></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify login button action through keyboard", "Login Page Validation"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;box&apos;]&quot;}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f6bbc2fc3901b67ae17752575fc6912b, findElement {using=xpath, value=//div[@class=&apos;box&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56246}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56246/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f6bbc2fc3901b67ae17752575fc6912b
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.isDisplayed(Unknown Source)
+	at lms.PageObjects.LoginPage.verifyDashboard(LoginPage.java:240)
+	at lms.StepDefinitions.Login_StepDefinition.admin_should_land_on_home_page(Login_StepDefinition.java:170)
+	at ✽.Admin should land on home page(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/01_Login.feature:136)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1572694199", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1572694199'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@class=&apos;box&apos;]&quot;}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f6bbc2fc3901b67ae17752575fc6912b, findElement {using=xpath, value=//div[@class=&apos;box&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56246}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:56246/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f6bbc2fc3901b67ae17752575fc6912b
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.isDisplayed(Unknown Source)
+	at lms.PageObjects.LoginPage.verifyDashboard(LoginPage.java:240)
+	at lms.StepDefinitions.Login_StepDefinition.admin_should_land_on_home_page(Login_StepDefinition.java:170)
+	at ✽.Admin should land on home page(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/01_Login.feature:136)
+</pre></div></td>
+<td>10</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify edited Program details", "Edit program Validation"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_verifies_that_the_details_are_correctly_updated(EditProgram_StepDefinition.java:124)
+	at ✽.Admin verifies that the details are correctly updated.(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:57)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1920143265", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1920143265'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_verifies_that_the_details_are_correctly_updated(EditProgram_StepDefinition.java:124)
+	at ✽.Admin verifies that the details are correctly updated.(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:57)
+</pre></div></td>
+<td>12</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate batchname prefix selected program name", "Add New Batch details pop up"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[normalize-space()=&apos;teckseleniumappium&apos;]&quot;}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [83f9d400a5fee32f24e759e336cf1023, findElement {using=xpath, value=//span[normalize-space()=&apos;teckseleniumappium&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:60835/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 83f9d400a5fee32f24e759e336cf1023
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at lms.PageObjects.BatchPage.selectProgram(BatchPage.java:368)
+	at lms.StepDefinitions.BatchAddNewPopup_StepDefinition.admin_selects_program_name_present_in_the_dropdown(BatchAddNewPopup_StepDefinition.java:65)
+	at ✽.Admin selects program name present in the dropdown(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/09_AddNewBatchDetailsPopUp.feature:11)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace234966356", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace234966356'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[normalize-space()=&apos;teckseleniumappium&apos;]&quot;}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [83f9d400a5fee32f24e759e336cf1023, findElement {using=xpath, value=//span[normalize-space()=&apos;teckseleniumappium&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60835}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:60835/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 83f9d400a5fee32f24e759e336cf1023
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at lms.PageObjects.BatchPage.selectProgram(BatchPage.java:368)
+	at lms.StepDefinitions.BatchAddNewPopup_StepDefinition.admin_selects_program_name_present_in_the_dropdown(BatchAddNewPopup_StepDefinition.java:65)
+	at ✽.Admin selects program name present in the dropdown(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/09_AddNewBatchDetailsPopUp.feature:11)
+</pre></div></td>
+<td>12</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user details", "Home Page Validation"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because the return value of &quot;lms.Utilities.ConfigReader.getrole()&quot; is null
+	at lms.PageObjects.HomePage.validateUserNameAndRole(HomePage.java:144)
+	at lms.StepDefinitions.HomePage_StepDefinition.admin_should_see_welcome_message_with_user_name_and_role(HomePage_StepDefinition.java:109)
+	at ✽.Admin should see welcome message with user name and role(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/02_HomePage.feature:43)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1219097843", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1219097843'><pre>java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because the return value of &quot;lms.Utilities.ConfigReader.getrole()&quot; is null
+	at lms.PageObjects.HomePage.validateUserNameAndRole(HomePage.java:144)
+	at lms.StepDefinitions.HomePage_StepDefinition.admin_should_see_welcome_message_with_user_name_and_role(HomePage_StepDefinition.java:109)
+	at ✽.Admin should see welcome message with user name and role(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/02_HomePage.feature:43)
+</pre></div></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Edit option", "Edit program Validation"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_clicks_on_edit_icon_for_particular_program(EditProgram_StepDefinition.java:30)
+	at ✽.Admin clicks on edit icon for particular program(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:11)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1487080317", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1487080317'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_clicks_on_edit_icon_for_particular_program(EditProgram_StepDefinition.java:30)
+	at ✽.Admin clicks on edit icon for particular program(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:11)
+</pre></div></td>
+<td>11</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify title of the pop up window", "Edit program Validation"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_clicks_on_edit_icon_for_particular_program(EditProgram_StepDefinition.java:30)
+	at ✽.Admin clicks on edit icon for particular program(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:17)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1680248952", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1680248952'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_clicks_on_edit_icon_for_particular_program(EditProgram_StepDefinition.java:30)
+	at ✽.Admin clicks on edit icon for particular program(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:17)
+</pre></div></td>
+<td>10</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify added program is created", "Add new program"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.AddNewProgram_StepDefinition.records_of_the_newly_created_program_name_is_displayed_and_match_the_data_entered(AddNewProgram_StepDefinition.java:143)
+	at ✽.Records of the newly created program name is displayed and match the data entered(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/07_AddNewProgram.feature:62)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace535154938", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace535154938'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.AddNewProgram_StepDefinition.records_of_the_newly_created_program_name_is_displayed_and_match_the_data_entered(AddNewProgram_StepDefinition.java:143)
+	at ✽.Records of the newly created program name is displayed and match the data entered(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/07_AddNewProgram.feature:62)
+</pre></div></td>
+<td>12</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to search results found for program name", "search bar program Validation"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.SearchBarProgram_StepDefinition.admin_should_able_to_see_program_name_description_and_status_for_searched_program_name(SearchBarProgram_StepDefinition.java:31)
+	at ✽.Admin should able to see Program name, description, and status for searched program name(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/12_SearchBarProgram.feature:13)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace157899403", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace157899403'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.SearchBarProgram_StepDefinition.admin_should_able_to_see_program_name_description_and_status_for_searched_program_name(SearchBarProgram_StepDefinition.java:31)
+	at ✽.Admin should able to see Program name, description, and status for searched program name(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/12_SearchBarProgram.feature:13)
+</pre></div></td>
+<td>11</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate input data only for mandatory fields", "Add New Batch details pop up"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //*[text()=&apos;Successful&apos;]&apos; (tried for 15 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at lms.PageObjects.BatchPage.waitForElementToBeVisible(BatchPage.java:468)
+	at lms.PageObjects.BatchPage.getToastMsg(BatchPage.java:462)
+	at lms.StepDefinitions.BatchAddNewPopup_StepDefinition.admin_should_get_a_successful_message(BatchAddNewPopup_StepDefinition.java:163)
+	at ✽.Admin should get a successful message(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/09_AddNewBatchDetailsPopUp.feature:25)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()=&apos;Successful&apos;]&quot;}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [27498efa424733f1a94085104aaceb62, findElement {using=xpath, value=//*[text()=&apos;Successful&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61072}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:61072/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 27498efa424733f1a94085104aaceb62
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 4 more
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1917480495", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1917480495'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //*[text()=&apos;Successful&apos;]&apos; (tried for 15 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at lms.PageObjects.BatchPage.waitForElementToBeVisible(BatchPage.java:468)
+	at lms.PageObjects.BatchPage.getToastMsg(BatchPage.java:462)
+	at lms.StepDefinitions.BatchAddNewPopup_StepDefinition.admin_should_get_a_successful_message(BatchAddNewPopup_StepDefinition.java:163)
+	at ✽.Admin should get a successful message(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/09_AddNewBatchDetailsPopUp.feature:25)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()=&apos;Successful&apos;]&quot;}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [27498efa424733f1a94085104aaceb62, findElement {using=xpath, value=//*[text()=&apos;Successful&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61072}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:61072/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 27498efa424733f1a94085104aaceb62
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 4 more
+</pre></div></td>
+<td>31</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify edit Program Name", "Edit program Validation"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_edits_the_program_name_and_and_click_on_save_button(EditProgram_StepDefinition.java:47)
+	at ✽.Admin edits the program name &quot;editProgram&quot; and &quot;programData&quot; and click on save button(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:29)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1298487232", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1298487232'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_edits_the_program_name_and_and_click_on_save_button(EditProgram_StepDefinition.java:47)
+	at ✽.Admin edits the program name &quot;editProgram&quot; and &quot;programData&quot; and click on save button(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:29)
+</pre></div></td>
+<td>11</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to search results found for program description", "search bar program Validation"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.SearchBarProgram_StepDefinition.admin_should_able_to_see_program_name_description_and_status_for_searched_program_name(SearchBarProgram_StepDefinition.java:31)
+	at ✽.Admin should able to see Program name, description, and status for searched program name(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/12_SearchBarProgram.feature:19)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace379705862", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace379705862'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.SearchBarProgram_StepDefinition.admin_should_able_to_see_program_name_description_and_status_for_searched_program_name(SearchBarProgram_StepDefinition.java:31)
+	at ✽.Admin should able to see Program name, description, and status for searched program name(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/12_SearchBarProgram.feature:19)
+</pre></div></td>
+<td>12</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to save the program details", "Add new program"</td>
+<td><div><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9bc9e82b4b7225af08be9f10d956751d, findElement {using=id, value=programDescription}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59859}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:59859/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9bc9e82b4b7225af08be9f10d956751d
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.toString(Unknown Source)
+	at lms.Utilities.CommonUtils.sendInput(CommonUtils.java:47)
+	at lms.PageObjects.ProgramPage.typeProgranDetailsInput(ProgramPage.java:243)
+	at lms.StepDefinitions.AddNewProgram_StepDefinition.admin_enter_details_for_mandatory_fields_and_click_on_save_button_and(AddNewProgram_StepDefinition.java:110)
+	at ✽.Admin enter details for mandatory fields and Click on save button &quot;invalidDetails&quot; and &quot;programData&quot;.(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/07_AddNewProgram.feature:44)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1595279229", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1595279229'><pre>org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9bc9e82b4b7225af08be9f10d956751d, findElement {using=id, value=programDescription}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59859}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:59859/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9bc9e82b4b7225af08be9f10d956751d
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.toString(Unknown Source)
+	at lms.Utilities.CommonUtils.sendInput(CommonUtils.java:47)
+	at lms.PageObjects.ProgramPage.typeProgranDetailsInput(ProgramPage.java:243)
+	at lms.StepDefinitions.AddNewProgram_StepDefinition.admin_enter_details_for_mandatory_fields_and_click_on_save_button_and(AddNewProgram_StepDefinition.java:110)
+	at ✽.Admin enter details for mandatory fields and Click on save button &quot;invalidDetails&quot; and &quot;programData&quot;.(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/07_AddNewProgram.feature:44)
+</pre></div></td>
+<td>16</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate serach box functionality", "Search Text Box Validation"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//tbody[@class=&apos;p-datatable-tbody&apos;]/tr[1]/td[6]&quot;}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [27cb5284e351cc05f862717228aeade3, findElement {using=xpath, value=//tbody[@class=&apos;p-datatable-tbody&apos;]/tr[1]/td[6]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62096}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62096/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 27cb5284e351cc05f862717228aeade3
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at lms.PageObjects.BatchPage.getProgramNameFromResults(BatchPage.java:287)
+	at lms.StepDefinitions.SearchTextboxValidation_StepDefinition.admin_should_see_the_filtered_batches_in_the_data_table(SearchTextboxValidation_StepDefinition.java:32)
+	at ✽.Admin should see the filtered batches in the data table(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/13_SearchTextboxValidation.feature:8)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace549559469", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace549559469'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//tbody[@class=&apos;p-datatable-tbody&apos;]/tr[1]/td[6]&quot;}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [27cb5284e351cc05f862717228aeade3, findElement {using=xpath, value=//tbody[@class=&apos;p-datatable-tbody&apos;]/tr[1]/td[6]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62096}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:62096/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 27cb5284e351cc05f862717228aeade3
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at lms.PageObjects.BatchPage.getProgramNameFromResults(BatchPage.java:287)
+	at lms.StepDefinitions.SearchTextboxValidation_StepDefinition.admin_should_see_the_filtered_batches_in_the_data_table(SearchTextboxValidation_StepDefinition.java:32)
+	at ✽.Admin should see the filtered batches in the data table(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/13_SearchTextboxValidation.feature:8)
+</pre></div></td>
+<td>12</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate login with invalid data", "Login Page Validation"</td>
+<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
+	at lms.StepDefinitions.Login_StepDefinition.error_message(Login_StepDefinition.java:189)
+	at ✽.Error message &quot;Invalid username and password Please try again&quot;(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/01_Login.feature:119)
+... Removed 4 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace668398584", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace668398584'><pre>java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at lms.StepDefinitions.Login_StepDefinition.error_message(Login_StepDefinition.java:189)
+	at ✽.Error message &quot;Invalid username and password Please try again&quot;(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/01_Login.feature:119)
+</pre></div></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify edit Description", "Edit program Validation"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programDecription(ProgramPage.java:410)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_edits_the_description_text_and_and_click_on_save_button(EditProgram_StepDefinition.java:74)
+	at ✽.Admin edits the description text &quot;editDescription&quot; and &quot;programData&quot; and click on save button(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:40)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1088674893", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1088674893'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programDecription(ProgramPage.java:410)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_edits_the_description_text_and_and_click_on_save_button(EditProgram_StepDefinition.java:74)
+	at ✽.Admin edits the description text &quot;editDescription&quot; and &quot;programData&quot; and click on save button(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:40)
+</pre></div></td>
+<td>13</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify mandatory fields with red asterisk mark", "Edit program Validation"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_clicks_on_edit_icon_for_particular_program(EditProgram_StepDefinition.java:30)
+	at ✽.Admin clicks on edit icon for particular program(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:23)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace275205079", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace275205079'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.EditProgram_StepDefinition.admin_clicks_on_edit_icon_for_particular_program(EditProgram_StepDefinition.java:30)
+	at ✽.Admin clicks on edit icon for particular program(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/15_EditProgram.feature:23)
+</pre></div></td>
+<td>11</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to save the program details", "Add new program"</td>
+<td><div><pre>java.lang.AssertionError: expected [Program Created Successfully] but found []
+	at lms.StepDefinitions.AddNewProgram_StepDefinition.admin_gets_message(AddNewProgram_StepDefinition.java:125)
+	at ✽.Admin gets message &quot;Program Created Successfully&quot;(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/07_AddNewProgram.feature:45)
+... Removed 6 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace38781629", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace38781629'><pre>java.lang.AssertionError: expected [Program Created Successfully] but found []
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+	at org.testng.Assert.assertEquals(Assert.java:132)
+	at org.testng.Assert.assertEquals(Assert.java:656)
+	at org.testng.Assert.assertEquals(Assert.java:666)
+	at lms.StepDefinitions.AddNewProgram_StepDefinition.admin_gets_message(AddNewProgram_StepDefinition.java:125)
+	at ✽.Admin gets message &quot;Program Created Successfully&quot;(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/07_AddNewProgram.feature:45)
+</pre></div></td>
+<td>11</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify select Status", "Add new program"</td>
+<td><div><pre>java.lang.AssertionError: Active status radio button should be selected. expected [true] but found [false]
+	at lms.StepDefinitions.AddNewProgram_StepDefinition.admin_can_see_status_selected(AddNewProgram_StepDefinition.java:202)
+	at ✽.Admin can see &apos;Active/Inactive&apos; status selected(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/07_AddNewProgram.feature:80)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace288657222", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace288657222'><pre>java.lang.AssertionError: Active status radio button should be selected. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at lms.StepDefinitions.AddNewProgram_StepDefinition.admin_can_see_status_selected(AddNewProgram_StepDefinition.java:202)
+	at ✽.Admin can see &apos;Active/Inactive&apos; status selected(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/07_AddNewProgram.feature:80)
+</pre></div></td>
+<td>6</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate save button in Batch details pop up", "Add New Batch details pop up"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //*[text()=&apos;Successful&apos;]&apos; (tried for 15 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at lms.PageObjects.BatchPage.waitForElementToBeVisible(BatchPage.java:468)
+	at lms.PageObjects.BatchPage.getToastMsg(BatchPage.java:462)
+	at lms.StepDefinitions.BatchAddNewPopup_StepDefinition.admin_should_get_a_succesesful_message(BatchAddNewPopup_StepDefinition.java:224)
+	at ✽.Admin should get a succesesful message(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/09_AddNewBatchDetailsPopUp.feature:33)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()=&apos;Successful&apos;]&quot;}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cfd7871ac2ea347e9f887c6ff81eb023, findElement {using=xpath, value=//*[text()=&apos;Successful&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61369}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:61369/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cfd7871ac2ea347e9f887c6ff81eb023
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 4 more
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace712775502", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace712775502'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //*[text()=&apos;Successful&apos;]&apos; (tried for 15 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at lms.PageObjects.BatchPage.waitForElementToBeVisible(BatchPage.java:468)
+	at lms.PageObjects.BatchPage.getToastMsg(BatchPage.java:462)
+	at lms.StepDefinitions.BatchAddNewPopup_StepDefinition.admin_should_get_a_succesesful_message(BatchAddNewPopup_StepDefinition.java:224)
+	at ✽.Admin should get a succesesful message(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/09_AddNewBatchDetailsPopUp.feature:33)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[text()=&apos;Successful&apos;]&quot;}
+  (Session info: chrome=133.0.6943.127)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.28.1&apos;, revision: &apos;73f5ad48a2&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;15.1.1&apos;, java.version: &apos;19.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cfd7871ac2ea347e9f887c6ff81eb023, findElement {using=xpath, value=//*[text()=&apos;Successful&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.127, chrome: {chromedriverVersion: 133.0.6943.126 (cffa127ce7b..., userDataDir: /var/folders/9x/bfy4ys6j4vn...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61369}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:61369/devtoo..., se:cdpVersion: 133.0.6943.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cfd7871ac2ea347e9f887c6ff81eb023
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 4 more
+</pre></div></td>
+<td>31</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to search with partial program name", "search bar program Validation"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.SearchBarProgram_StepDefinition.admin_should_able_to_see_program_name_description_and_status_for_searched_program_name(SearchBarProgram_StepDefinition.java:31)
+	at ✽.Admin should able to see Program name, description, and status for searched program name(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/12_SearchBarProgram.feature:31)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace730583294", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace730583294'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.PageObjects.ProgramPage.programName(ProgramPage.java:404)
+	at lms.StepDefinitions.SearchBarProgram_StepDefinition.admin_should_able_to_see_program_name_description_and_status_for_searched_program_name(SearchBarProgram_StepDefinition.java:31)
+	at ✽.Admin should able to see Program name, description, and status for searched program name(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/12_SearchBarProgram.feature:31)
+</pre></div></td>
+<td>12</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify empty form submission", "Add new program"</td>
+<td><div><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.StepDefinitions.AddNewProgram_StepDefinition.admin_gets_error_message(AddNewProgram_StepDefinition.java:86)
+	at ✽.Admin gets error message(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/07_AddNewProgram.feature:30)
+... Removed 2 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1056249164", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1056249164'><pre>java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:385)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy46.get(Unknown Source)
+	at lms.StepDefinitions.AddNewProgram_StepDefinition.admin_gets_error_message(AddNewProgram_StepDefinition.java:86)
+	at ✽.Admin gets error message(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/07_AddNewProgram.feature:30)
+</pre></div></td>
+<td>10</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate alignment for navigation bar", "Home Page Validation"</td>
+<td><div><pre>java.lang.AssertionError: Navigation bar element is not in the top-right side. expected [true] but found [false]
+	at lms.StepDefinitions.HomePage_StepDefinition.admin_should_see_the_navigation_bar_text_on_the_top_right_side(HomePage_StepDefinition.java:74)
+	at ✽.Admin should see the navigation bar text on the top right side(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/02_HomePage.feature:22)
+... Removed 3 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1612646", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1612646'><pre>java.lang.AssertionError: Navigation bar element is not in the top-right side. expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1578)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at lms.StepDefinitions.HomePage_StepDefinition.admin_should_see_the_navigation_bar_text_on_the_top_right_side(HomePage_StepDefinition.java:74)
+	at ✽.Admin should see the navigation bar text on the top right side(file:///Users/uvaraj/eclipse-workspace/Team12_TechRockstars_LMS_UI_Phase2/src/test/resources/Features/02_HomePage.feature:22)
+</pre></div></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate login credentials with null password", "Login Page Validation"</td>
+<td></td>
+<td>3</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify footer message in manage program", "program page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify for broken link", "Login Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate sorting of program description in ascending order", "program sorting"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate navigation bar order 2nd Program", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify input descriptive text in password field", "Login Page Validation"</td>
+<td></td>
+<td>6</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to click 'No'", "Delete program Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate login credentials with null user name", "Login Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify sorting of program status in ascending order", "program sorting"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify checkboxes default state beside each Program names in the data table", "program page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate sign in content", "Login Page Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to click Next page link", "Pagination program"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate multiple row delete with checkbox", "Delete multiple batches with check box"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that Admin is able to navigate to program", "Navigation program"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Search button", "program page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate navigation bar order 1st home", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify enter program name", "Add new program"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to see deleted program", "Delete program Validation"</td>
+<td></td>
+<td>7</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify heading in manage program", "program page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Datatable headers", "Batch Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify application name", "Login Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify cancel button", "Add new program"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to land on login page", "Login Page Validation"</td>
+<td></td>
+<td>6</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate the first page link", "Pagination"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate cancel button in Batch details pop up", "Edit Icon Validation"</td>
+<td></td>
+<td>12</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate all the fields exist in pop up", "Add New Batch details pop up"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate cancel button in Batch details pop up", "Add New Batch details pop up"</td>
+<td></td>
+<td>12</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate navigation bar order 3rd  batch", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify column header name of data table", "program page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify logout function", "Validation on Logout button"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify text on the first field", "Login Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify bar chart", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify sorting of program name in ascending order", "program sorting"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate LMS title has correct spelling and space", "Home Page Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate close icon on the batch details pop up", "Add New Batch details pop up"</td>
+<td></td>
+<td>12</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify close window with "X"", "Add new program"</td>
+<td></td>
+<td>15</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Edit icon feature in any row", "Edit Icon Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to click 'Yes'", "DELETE MULTIPLE program Validation"</td>
+<td></td>
+<td>6</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to close the window with "X"", "DELETE MULTIPLE program Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to close the window with "X"", "Delete program Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate single row delete with checkbox", "Delete multiple batches with check box"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that Admin is able to navigate to class", "Navigation program"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify dropdown is present", "Login Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify program count", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify text field is present", "Login Page Validation"</td>
+<td></td>
+<td>6</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify mandatory fields with red asterisk mark", "Add new program"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to click Previous page link", "Pagination program"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to click First page link", "Pagination program"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate navigation bar order 4th  class", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify placeholder in dropdown to select role", "Login Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate "Title" in Batch Page", "Batch Page Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate close Icon on the alert box", "Delete Batch validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the alignment input field for the login", "Login Page Validation"</td>
+<td></td>
+<td>3</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the Multiple Delete button state", "program page Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify login button action through mouse", "Login Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify asterisk next to USER text", "Login Page Validation"</td>
+<td></td>
+<td>3</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to click Last page link", "Pagination program"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify staff count", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate next page link", "Pagination"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify enter description", "Add new program"</td>
+<td></td>
+<td>21</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin Navigate to Batch page successfully", "Batch Page Navigation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify staff data page split", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate sorting of program description in Descending order", "program sorting"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify previous page icon disable", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LMS title alignment", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify pie-chart presence", "Home Page Validation"</td>
+<td></td>
+<td>3</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify sub menu displayed in batch menu bar", "Add New Batch"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Admin able to click on the Add new Batch Option", "Add New Batch"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate pagination in the Batch Page", "Batch Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate edit icon in each data rows", "Batch Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify checkbox default state beside Program Name column header", "program page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate program name  value is disabled to edit", "Edit Icon Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify first page icon disabled", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate sorting of program name in Descending order", "program sorting"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to select multiple programs", "DELETE MULTIPLE program Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify staff table pagination", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to click 'Yes'", "Delete program Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate save button in Batch details pop up", "Edit Icon Validation"</td>
+<td></td>
+<td>33</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate input data missing for mandatory fields", "Add New Batch details pop up"</td>
+<td></td>
+<td>15</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify view details of programs", "program page Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify delete feature", "Delete program Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate "Checkbox" in the Datatable header row", "Batch Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate "heading" in the Batch Page", "Batch Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Sort icon in manage program", "program page Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify cancel program details", "Add new program"</td>
+<td></td>
+<td>6</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate batch name  value is disabled to edit", "Edit Icon Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify edit and delete icon in manage program", "program page Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify pagination icons below data table in manage program", "program page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to delete Multiple programs", "DELETE MULTIPLE program Validation"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate checkbox in each data rows", "Batch Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify that Admin is able to navigate to batch", "Navigation program"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify asterisk mark symbol next to password text", "Login Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate login with valid data in all field", "Login Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate batch name prefix box is not editable", "Add New Batch details pop up"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate last page link", "Pagination"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify text on the second field", "Login Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to land on home page with invalid URL", "Login Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate "sort icon" next to all the datatable header", "Batch Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate batch name suffix box should accept only numbers", "Add New Batch details pop up"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate logout option in the header is visible and enabled from the batch page", "LogOut of the application from the Batch Page"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify company name", "Login Page Validation"</td>
+<td></td>
+<td>3</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify Login button is present", "Login Page Validation"</td>
+<td></td>
+<td>3</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify title of the pop up window", "Add new program"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to see deleted program", "DELETE MULTIPLE program Validation"</td>
+<td></td>
+<td>7</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify batch count", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "verify sorting of program status in descending order", "program sorting"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify user count", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate delete icon in each data rows", "Batch Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate navigation bar order 5th logout", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify add New Program", "Add new program"</td>
+<td></td>
+<td>5</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Admin is able to search results not found", "search bar program Validation"</td>
+<td></td>
+<td>6</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify the text spelling in the page", "Login Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify LMS title", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify input descriptive text in user field", "Login Page Validation"</td>
+<td></td>
+<td>3</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate navigation bar text", "Home Page Validation"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+<tr>
+<td title='lms.Runner.TestRunner$TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: lms.Runner.TestRunner$TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "validate the previous page link", "Pagination"</td>
+<td></td>
+<td>4</td>
+<td>lms.Runner.TestRunner$TestNGTestRunner@14bdbc74</td></tr>
+</table><p>
+</body>
+</html>

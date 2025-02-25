@@ -3,7 +3,7 @@
 Feature: Navigation program
 Background: Admin is logged in to LMS Portal
 Given The browser is open 
-When Admin gives the correct lms portal url
+When Admin gives the correct LMS portal URL
 Then Admin should land on the login page 
 
 @TC_01

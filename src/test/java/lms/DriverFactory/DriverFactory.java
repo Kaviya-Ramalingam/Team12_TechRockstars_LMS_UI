@@ -14,9 +14,9 @@ import lms.Utilities.LoggerLoad;
 
 public class DriverFactory {
 	public static ThreadLocal<WebDriver> thdriver = new ThreadLocal<>();
-	public static String browser = ConfigReader.getBrowser();
+	//public static String browser = ConfigReader.getBrowser(); to read from property file
 	public static String baseUrl = ConfigReader.getUrl();
-
+	
 	public static WebDriver Initialization(String browser) {
 
 	
