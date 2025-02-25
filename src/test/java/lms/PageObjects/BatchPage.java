@@ -366,6 +366,7 @@ public class BatchPage {
 
 		CommonUtils.clickElement(driver, programNameDropDown);
 		WebElement ele = driver.findElement(By.xpath("//span[normalize-space()='" + st + "']"));
+		
 		CommonUtils.clickElement(driver, ele);
 	}
 

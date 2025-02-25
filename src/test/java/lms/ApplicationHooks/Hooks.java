@@ -29,7 +29,8 @@ public class Hooks {
 	public static void initialization() throws Throwable {
 
 		ConfigReader.ReadDataFromConfig();
-		String browser = ConfigReader.getBrowser();// to read from property file
+		 String browser = ConfigReader.getBrowserName();//to read from testng.xml
+		//String browser = ConfigReader.getBrowser();// to read from property file
 		DriverFactory.Initialization(browser);
 		driver = DriverFactory.getdriver();
 		LoggerLoad.info("starting browser");

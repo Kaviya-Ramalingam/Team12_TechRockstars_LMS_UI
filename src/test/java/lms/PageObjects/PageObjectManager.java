@@ -10,7 +10,7 @@ public class PageObjectManager {
 	public LogoutPage logoutPage;
 	public ProgramPage programPage;
 	public BatchPage bp;
-	public ClassPage classPage;
+	//public ClassPage classPage;
 	public HomePage homePage;
 
 	public PageObjectManager(WebDriver driver) {
@@ -42,10 +42,10 @@ public class PageObjectManager {
 		return bp;
 	}
 
-	public ClassPage getClassPage() {
+	/*public ClassPage getClassPage() {
 		classPage = new ClassPage(driver);
 		return classPage;
-	}
+	}*/
 
 	
 
