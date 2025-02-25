@@ -50,6 +50,7 @@ public class AddNewProgram_StepDefinition {
 
 	@Then("Admin should see window title as {string}")
 	public void admin_should_see_window_title_as(String expectedTitle) throws InterruptedException {
+		LoggerLoad.info("program pop up window title :" +programPage.programDetailsTitle());		
 		Assert.assertEquals(programPage.programDetailsTitle(), expectedTitle);
 	}
 
@@ -71,7 +72,7 @@ public class AddNewProgram_StepDefinition {
 
 	@When("Admin clicks save button without entering mandatory")
 	public void admin_clicks_save_button_without_entering_mandatory() throws InterruptedException {
-		// Thread.sleep(1000);
+		
 		programPage.clickSaveButton();
 	}
 
@@ -133,6 +134,7 @@ public class AddNewProgram_StepDefinition {
 
 		String progrName = ConfigReader.getProperty("program.name");
 		programPage.SearchByProgramName(progrName);
+	
 
 	}
 

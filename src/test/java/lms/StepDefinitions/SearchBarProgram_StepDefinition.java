@@ -41,7 +41,7 @@ public class SearchBarProgram_StepDefinition {
 
 	@When("Admin enter the program to search By program name that does not exist")
 	public void admin_enter_the_program_to_search_by_program_name_that_does_not_exist() {
-		programPage.SearchByProgramName(ConfigReader.getProperty("program.name"));
+		programPage.SearchByProgramName(ConfigReader.getProperty("program.notexist"));
 	}
 
 	@When("Admin enter the program to search By partial name of program")
